@@ -1,4 +1,4 @@
-package org.kjms.xmlparser.article.front.article.meta;
+package org.kjms.xmlparser.article.front.articlemeta.articlecategories;
 
 import org.kjms.xmlparser.Tag;
 
