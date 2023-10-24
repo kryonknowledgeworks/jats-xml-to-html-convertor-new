@@ -1,15 +1,18 @@
-package org.kjms.xmlparser.article.front.articlemeta.titlegroup;
+package org.kjms.xmlparser.commontag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
+import org.kjms.xmlparser.article.back.reflist.RefList;
+import org.kjms.xmlparser.article.back.reflist.RefListTitle;
+import org.kjms.xmlparser.article.back.reflist.ref.Ref;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
+public class Name implements Tag {
 
-public class TitleGroup implements Tag {
     private final Node node;
 
-    public TitleGroup(Node node) {
+    public Name(Node node) {
         this.node = node;
     }
 
@@ -23,11 +26,11 @@ public class TitleGroup implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.ARTICLE_TITLE)) {
-                stringBuilder.append(new ArticleTitle(childNode).getElement());
+            if (nodeName.equalsIgnoreCase(Element.SURNAME) || nodeName.equalsIgnoreCase(Element.GIVEN_NAMES)) {
+                stringBuilder.append(TagUtils.addLabelTag(nodeName));
             }
         }
 
-        return TagUtils.addDivTag(stringBuilder.toString());
+        return stringBuilder.toString();
     }
 }

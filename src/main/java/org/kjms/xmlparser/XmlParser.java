@@ -24,9 +24,6 @@ public class XmlParser {
 
         String fileImagePath = file.getParentFile().toString();
 
-        System.out.println(file.getAbsolutePath());
-
-
 //        file = new File(outputFilePath);
 
 //        System.out.println(file.getParentFile().toString());
@@ -45,6 +42,8 @@ public class XmlParser {
         document.getDocumentElement().normalize();
 
         String html = HtmlBuilder.buildHtml(document);
+
+//        System.out.println(html);
 //
 //        System.out.println(document);
 

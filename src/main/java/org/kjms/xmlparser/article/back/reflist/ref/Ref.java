@@ -1,18 +1,16 @@
-package org.kjms.xmlparser.article.back;
+package org.kjms.xmlparser.article.back.reflist.ref;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.article.back.ack.Ack;
-import org.kjms.xmlparser.article.back.reflist.RefList;
-import org.kjms.xmlparser.article.back.sec.BackSec;
+import org.kjms.xmlparser.utils.NodeUtils;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
-public class Back implements Tag {
+public class Ref implements Tag {
 
     private final Node node;
 
-    public Back(Node node) {
+    public Ref(Node node) {
         this.node = node;
     }
 
@@ -28,12 +26,10 @@ public class Back implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.SEC)) {
-                tag = new BackSec(childNode);
-            } else if (nodeName.equalsIgnoreCase(Element.ACK)) {
-                tag = new Ack(childNode);
-            } else if (nodeName.equalsIgnoreCase(Element.REF_LIST)) {
-                tag = new RefList(childNode);
+            if (nodeName.equalsIgnoreCase(Element.LABEL)) {
+                tag = new RefLabel(childNode);
+            } else if (Element.CITATION_ELEMENTS.contains(childNode.getNodeName())) {
+                tag = new RefCitation(childNode);
             }
 
             if (tag != null) {
@@ -41,6 +37,6 @@ public class Back implements Tag {
             }
         }
 
-        return TagUtils.addDivTag(stringBuilder.toString());
+        return TagUtils.addDivTag(stringBuilder.toString(), NodeUtils.getId(node));
     }
 }

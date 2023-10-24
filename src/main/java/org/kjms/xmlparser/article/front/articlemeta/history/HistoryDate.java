@@ -1,20 +1,20 @@
-package org.kjms.xmlparser.article.front.articlemeta.titlegroup;
+package org.kjms.xmlparser.article.front.articlemeta.history;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
+import java.util.Set;
 
-public class TitleGroup implements Tag {
+public class HistoryDate implements Tag {
     private final Node node;
 
-    public TitleGroup(Node node) {
+    public HistoryDate(Node node) {
         this.node = node;
     }
 
     public String getElement() {
-
         StringBuilder stringBuilder = new StringBuilder();
 
         for (int i = 0; i < node.getChildNodes().getLength(); i++) {
@@ -23,8 +23,8 @@ public class TitleGroup implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.ARTICLE_TITLE)) {
-                stringBuilder.append(new ArticleTitle(childNode).getElement());
+            if (Set.of(Element.DAY, Element.MONTH, Element.YEAR).contains(nodeName)) {
+                stringBuilder.append(TagUtils.addLabelTag(childNode.getTextContent()));
             }
         }
 

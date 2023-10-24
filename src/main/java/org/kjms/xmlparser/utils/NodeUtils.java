@@ -54,16 +54,8 @@ public interface NodeUtils {
         return childNodes;
     }
 
-    static List<Node> getNodes(List<Node> nodeList, String elementName) {
-
-        List<Node> childNodes = new ArrayList<>();
-
-        nodeList.forEach(childNode -> {
-            if (childNode.getNodeName().equals(elementName)) {
-                childNodes.add(childNode);
-            }
-        });
-
-        return childNodes;
+    static String getId(Node node) {
+        return node.getAttributes().getNamedItem("id").getNodeValue();
     }
+
 }

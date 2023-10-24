@@ -1,14 +1,14 @@
-package org.kjms.xmlparser.article.back.sec;
+package org.kjms.xmlparser.commontag.contributornaming;
 
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.commontag.Paragraph;
-
+import org.kjms.xmlparser.commontag.Name;
 import org.w3c.dom.Node;
 
-public class BackSecP extends Paragraph implements Tag {
+public class ContributorNamingName extends Name implements Tag {
+
     private final Node node;
 
-    public BackSecP(Node node) {
+    public ContributorNamingName(Node node) {
         super(node);
         this.node = node;
     }

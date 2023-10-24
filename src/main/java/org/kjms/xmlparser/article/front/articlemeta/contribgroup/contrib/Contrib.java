@@ -2,38 +2,36 @@ package org.kjms.xmlparser.article.front.articlemeta.contribgroup.contrib;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.utils.NodeUtils;
+
+
+import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
-import java.util.List;
 
 public class Contrib implements Tag {
 
-    private final List<Node> nodes;
+    private final Node node;
 
-    public Contrib(List<Node> nodes) {
-        this.nodes = nodes;
+    public Contrib(Node node) {
+        this.node = node;
     }
 
     public String getElement() {
+        StringBuilder stringBuilder = new StringBuilder();
 
-        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
 
-        for (Node node : nodes) {
-            Name name = new Name(NodeUtils.getNodes(node, Element.NAME));
+            Node childNode = node.getChildNodes().item(i);
 
-            Xref xref = new Xref(NodeUtils.getNodes(node, Element.XREF));
+            final String nodeName = childNode.getNodeName();
 
-            Node contribId = NodeUtils.getNode(node, Element.CONTRIB);
-
-            result.append(name.getElement()).append(xref.getElement());
-
-            if (contribId != null) {
-                result.append(node.getTextContent());
+            if (nodeName.equalsIgnoreCase(Element.XREF)) {
+                stringBuilder.append(new ContribXref(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.NAME)) {
+                stringBuilder.append(new ContribName(childNode).getElement());
             }
-
         }
 
-        return result.toString();
+        return TagUtils.addDivTag(stringBuilder.toString());
     }
 }

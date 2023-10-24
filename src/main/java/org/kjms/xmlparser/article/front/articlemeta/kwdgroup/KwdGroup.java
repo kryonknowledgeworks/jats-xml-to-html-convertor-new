@@ -1,10 +1,31 @@
 package org.kjms.xmlparser.article.front.articlemeta.kwdgroup;
 
+import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
+import org.kjms.xmlparser.utils.TagUtils;
+import org.w3c.dom.Node;
 
 public class KwdGroup implements Tag {
-    @Override
+    private final Node node;
+
+    public KwdGroup(Node node) {
+        this.node = node;
+    }
+
     public String getElement() {
-        return Tag.super.getElement();
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
+
+            Node childNode = node.getChildNodes().item(i);
+
+            final String nodeName = childNode.getNodeName();
+
+            if (nodeName.equalsIgnoreCase(Element.KWD)) {
+                stringBuilder.append(new Kwd(childNode).getElement());
+            }
+        }
+
+        return TagUtils.addDivTag(stringBuilder.toString());
     }
 }

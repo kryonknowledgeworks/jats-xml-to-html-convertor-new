@@ -9,21 +9,15 @@ import java.util.List;
 import java.util.Set;
 
 public class Aff implements Tag {
-    private final List<Node> nodes;
+    private final Node node;
 
-    public Aff(List<Node> nodes) {
-        this.nodes = nodes;
+    public Aff(Node node) {
+        this.node = node;
     }
 
     public String getElement() {
 
         StringBuilder stringBuilder = new StringBuilder();
-
-        for (Node node : nodes) {
-            if (Set.of(Element.TEXT, Element.LABEL).contains(node.getNodeName())) {
-                stringBuilder.append(node.getTextContent());
-            }
-        }
 
         return stringBuilder.toString();
     }

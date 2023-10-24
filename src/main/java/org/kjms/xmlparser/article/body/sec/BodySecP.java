@@ -1,12 +1,12 @@
-package org.kjms.xmlparser.article.front.articlemeta.abstracttag;
+package org.kjms.xmlparser.article.body.sec;
 
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.commontag.Paragraph;
 import org.w3c.dom.Node;
 
-public class AbstractTagP extends Paragraph implements Tag {
+public class BodySecP extends Paragraph implements Tag {
 
-    public AbstractTagP(Node node) {
+    public BodySecP(Node node) {
         super(node);
     }
 
