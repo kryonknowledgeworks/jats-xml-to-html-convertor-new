@@ -18,35 +18,33 @@ public class XmlParser {
         System.setProperty("file.encoding", "UTF-8");
 
         String inputFilePath = "C:\\Users\\ADMIN\\Documents\\Java Projects\\parser-in\\parser-in\\GANDF-3-1_2-27.xml";
-        String outputFilePath = "C:\\Users\\ADMIN\\Documents\\output.html";
+//        String outputFilePath = "C:\\Users\\ADMIN\\Documents\\output.html";
 
         File file = new File(inputFilePath);
 
         String fileImagePath = file.getParentFile().toString();
 
-        System.out.println(fileImagePath);
+        System.out.println(file.getAbsolutePath());
 
-        System.out.println("fileImagePath");
 
-        file = new File(outputFilePath);
+//        file = new File(outputFilePath);
 
-        System.out.println(file.getParentFile().toString());
+//        System.out.println(file.getParentFile().toString());
 
 //        FileUtils.copyDirectory(new File(fileImagePath), new File(file.getParentFile().toString()));
 //
 //        File inputFile = new File(inputFilePath);
-//        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//        factory.setNamespaceAware(true);
-//        factory.setValidating(true);
-//        DocumentBuilder documentBuilder = factory.newDocumentBuilder();
-//        documentBuilder.setErrorHandler(new ParserErrorHandler());
-//        Document document = documentBuilder.parse(inputFile);
-//        String xlinkNamespaceURI = "http://www.w3.org/1999/xlink";
-//        document.getDocumentElement().setAttribute("xmlns:xlink", xlinkNamespaceURI);
-//        document.getDocumentElement().normalize();
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(true);
+        factory.setValidating(true);
+        DocumentBuilder documentBuilder = factory.newDocumentBuilder();
+        documentBuilder.setErrorHandler(new ParserErrorHandler());
+        Document document = documentBuilder.parse(file);
+        String xlinkNamespaceURI = "http://www.w3.org/1999/xlink";
+        document.getDocumentElement().setAttribute("xmlns:xlink", xlinkNamespaceURI);
+        document.getDocumentElement().normalize();
 
-//
-//        String html = HtmlBuilder.buildHtml(document);
+        String html = HtmlBuilder.buildHtml(document);
 //
 //        System.out.println(document);
 

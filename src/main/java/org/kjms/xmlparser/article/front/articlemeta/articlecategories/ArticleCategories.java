@@ -1,6 +1,9 @@
 package org.kjms.xmlparser.article.front.articlemeta.articlecategories;
 
+import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
+import org.kjms.xmlparser.article.front.articlemeta.articlecategories.subjgroup.SubjGroup;
+import org.kjms.xmlparser.utils.NodeUtils;
 import org.w3c.dom.Node;
 
 public class ArticleCategories implements Tag {
@@ -12,6 +15,9 @@ public class ArticleCategories implements Tag {
     }
 
     public String getElement() {
-        return "";
+
+        SubjGroup subjGroup = new SubjGroup(NodeUtils.getNode(node, Element.SUBJ_GROUP));
+
+        return subjGroup.getElement();
     }
 }

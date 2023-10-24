@@ -1,4 +1,4 @@
-package org.kjms.xmlparser.article.front.articlemeta.titlegroup;
+package org.kjms.xmlparser.article.front.articlemeta.articlecategories.subjgroup;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
@@ -7,15 +7,16 @@ import org.w3c.dom.Node;
 
 import java.util.List;
 
-public class TitleGroup implements Tag {
+public class SubjGroup implements Tag {
     private final Node node;
 
-    public TitleGroup(Node node) {
+    public SubjGroup(Node node) {
         this.node = node;
     }
 
     public String getElement() {
-        List<Node> articleTitles = NodeUtils.getNodes(node, Element.ARTICLE_TITLE);
+
+        List<Node> subjects = NodeUtils.getNodes(node, Element.SUBJECT);
 
         return "";
     }
