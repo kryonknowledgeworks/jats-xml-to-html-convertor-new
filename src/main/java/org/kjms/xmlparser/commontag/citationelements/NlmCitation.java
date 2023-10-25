@@ -1,9 +1,7 @@
-package org.kjms.xmlparser.commontag.citation;
+package org.kjms.xmlparser.commontag.citationelements;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.article.back.ack.Ack;
-import org.kjms.xmlparser.article.back.sec.BackSec;
 import org.kjms.xmlparser.commontag.Comment;
 import org.kjms.xmlparser.commontag.PersonGroup;
 import org.kjms.xmlparser.utils.TagUtils;

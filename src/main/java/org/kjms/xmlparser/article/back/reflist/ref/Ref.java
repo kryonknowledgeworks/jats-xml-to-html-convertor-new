@@ -29,7 +29,7 @@ public class Ref implements Tag {
             if (nodeName.equalsIgnoreCase(Element.LABEL)) {
                 tag = new RefLabel(childNode);
             } else if (Element.CITATION_ELEMENTS.contains(childNode.getNodeName())) {
-                tag = new RefCitation(childNode);
+                tag = new RefCitationElements(childNode);
             }
 
             if (tag != null) {

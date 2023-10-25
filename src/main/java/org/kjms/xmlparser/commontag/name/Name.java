@@ -1,4 +1,4 @@
-package org.kjms.xmlparser.commontag;
+package org.kjms.xmlparser.commontag.name;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
@@ -26,8 +26,14 @@ public class Name implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.SURNAME) || nodeName.equalsIgnoreCase(Element.GIVEN_NAMES)) {
-                stringBuilder.append(TagUtils.addLabelTag(nodeName));
+            if (nodeName.equalsIgnoreCase(Element.SURNAME)) {
+                stringBuilder.append(new Surname(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.GIVEN_NAMES)) {
+                stringBuilder.append(new GivenNames(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.PREFIX)) {
+                stringBuilder.append(new Prefix(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.SUFFIX)) {
+                stringBuilder.append(new Suffix(childNode).getElement());
             }
         }
 

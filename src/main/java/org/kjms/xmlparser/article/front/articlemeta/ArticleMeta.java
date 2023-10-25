@@ -35,7 +35,7 @@ public class ArticleMeta implements Tag {
                 stringBuilder.append(new ArticleCategories(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.TITLE_GROUP)) {
                 stringBuilder.append(new TitleGroup(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.CONTRIB_GROUP)) {
+            } else if (nodeName.equalsIgnoreCase(Element.CONTRIBUTOR_GROUP)) {
                 stringBuilder.append(new ContribGroup(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.AUTHOR_NOTES)) {
                 stringBuilder.append(new AuthorNotes(childNode).getElement());

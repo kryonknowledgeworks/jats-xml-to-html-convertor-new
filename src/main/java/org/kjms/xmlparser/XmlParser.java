@@ -18,7 +18,7 @@ public class XmlParser {
         System.setProperty("file.encoding", "UTF-8");
 
         String inputFilePath = "C:\\Users\\ADMIN\\Documents\\Java Projects\\parser-in\\parser-in\\GANDF-3-1_2-27.xml";
-//        String outputFilePath = "C:\\Users\\ADMIN\\Documents\\output.html";
+        String outputFilePath = "C:\\Users\\ADMIN\\Documents\\output.html";
 
         File file = new File(inputFilePath);
 
@@ -43,12 +43,10 @@ public class XmlParser {
 
         String html = HtmlBuilder.buildHtml(document);
 
-//        System.out.println(html);
-//
-//        System.out.println(document);
+        System.out.println(html);
 
-//        FileWriter myWriter = new FileWriter(outputFilePath);
-//        myWriter.write(html);
-//        myWriter.close();
+        FileWriter myWriter = new FileWriter(outputFilePath);
+        myWriter.write(html);
+        myWriter.close();
     }
 }

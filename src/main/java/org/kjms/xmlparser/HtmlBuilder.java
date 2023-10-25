@@ -3,6 +3,8 @@ package org.kjms.xmlparser;
 import org.kjms.xmlparser.article.Article;
 import org.w3c.dom.Document;
 
+import javax.swing.text.Style;
+
 public interface HtmlBuilder {
 
     static String buildHtml(Document document) {

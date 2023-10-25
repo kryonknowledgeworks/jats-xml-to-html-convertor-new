@@ -1,14 +1,14 @@
-package org.kjms.xmlparser.commontag;
+package org.kjms.xmlparser.commontag.addresselements;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
-public class LinkingElement implements Tag {
+public class InstitutionWrap implements Tag {
     private final Node node;
 
-    public LinkingElement(Node node) {
+    public InstitutionWrap(Node node) {
         this.node = node;
     }
 
@@ -21,8 +21,10 @@ public class LinkingElement implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.EMAIL)) {
-                stringBuilder.append(TagUtils.addLabelTag(childNode.getTextContent()));
+            if (nodeName.equalsIgnoreCase(Element.INSTITUTION)) {
+                stringBuilder.append(new Institution(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.INSTITUTION_ID)) {
+                stringBuilder.append(new InstitutionId(childNode).getElement());
             }
         }
 

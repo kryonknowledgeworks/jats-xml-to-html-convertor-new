@@ -6,6 +6,7 @@ import org.kjms.xmlparser.article.back.reflist.RefList;
 import org.kjms.xmlparser.article.back.reflist.RefListTitle;
 import org.kjms.xmlparser.article.back.reflist.ref.Ref;
 import org.kjms.xmlparser.commontag.contributornaming.ContributorNaming;
+import org.kjms.xmlparser.commontag.contributornamingelements.ContributorNamingElements;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -26,8 +27,18 @@ public class PersonGroup implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.NAME)) {
-                stringBuilder.append(TagUtils.addDivTag(new ContributorNaming(childNode).getElement()));
+            if (nodeName.equalsIgnoreCase(Element.TEXT)) {
+                stringBuilder.append(TagUtils.addSpanTag(childNode.getTextContent()));
+            } else if (Element.CONTRIBUTOR_NAMING_ELEMENTS.contains(nodeName)) {
+                stringBuilder.append(new ContributorNamingElements(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.AFFILIATION)) {
+                stringBuilder.append(new Affiliation(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.AFFILIATION_ALTERNATIVES)) {
+                stringBuilder.append(new AffiliationAlternatives(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.ET_AL)) {
+                stringBuilder.append(new EtAl(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.ROLE)) {
+                stringBuilder.append(new Role(childNode).getElement());
             }
         }
 

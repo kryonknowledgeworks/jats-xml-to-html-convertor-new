@@ -2,10 +2,9 @@ package org.kjms.xmlparser.article.front.articlemeta.articlecategories.subjgroup
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.utils.NodeUtils;
+import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
-import java.util.List;
 
 public class SubjGroup implements Tag {
     private final Node node;
@@ -16,8 +15,19 @@ public class SubjGroup implements Tag {
 
     public String getElement() {
 
-        List<Node> subjects = NodeUtils.getNodes(node, Element.SUBJECT);
+        StringBuilder stringBuilder = new StringBuilder();
 
-        return "";
+        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
+
+            Node childNode = node.getChildNodes().item(i);
+
+            final String nodeName = childNode.getNodeName();
+
+            if (nodeName.equalsIgnoreCase(Element.SUBJECT)) {
+                stringBuilder.append(new Subject(childNode).getElement());
+            }
+        }
+
+        return TagUtils.addDivTag(stringBuilder.toString());
     }
 }

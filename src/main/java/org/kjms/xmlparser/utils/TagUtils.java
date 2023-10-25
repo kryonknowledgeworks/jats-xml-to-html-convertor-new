@@ -1,5 +1,7 @@
 package org.kjms.xmlparser.utils;
 
+import java.util.Map;
+
 public interface TagUtils {
 
     static String addBodyTag(String data, String style, String margin) {
@@ -32,5 +34,52 @@ public interface TagUtils {
 
     static String addATag(String data) {
         return "<a href=" + data + ">" + data + "</a>";
+    }
+
+    static String addATag(Map<String, String> attributes, String link) {
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append("<a ");
+
+        attributes.forEach((key, value) -> stringBuilder.append(key).append("=").append(value));
+
+        return stringBuilder.append(" >").append(link).append(" </a>").toString();
+    }
+
+    static String addBTag(String data) {
+        return "<b>" + data + "</b>";
+    }
+
+    static String addITag(String data) {
+        return "<i> " + data + " </i>";
+    }
+
+    static String addCodeTag(String data) {
+        return "<code> " + data + " </code>";
+    }
+
+    static String addSpanTag(String data, String style) {
+        return "<span style=" + style + " >" + data + " </span>";
+    }
+
+    static String addSpanTag(String data) {
+        return "<span> " + data + " </span>";
+    }
+
+    static String addSTag(String data) {
+        return "<s> " + data + " </s>";
+    }
+
+    static String addUTag(String data) {
+        return "<u> " + data + " </u>";
+    }
+
+    static String addRbTag(String data) {
+        return "<rb> " + data + " </rb>";
+    }
+
+    static String addRtTag(String data) {
+        return "<rt> " + data + " </rt>";
     }
 }
