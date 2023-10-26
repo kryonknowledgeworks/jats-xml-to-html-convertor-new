@@ -25,7 +25,7 @@ public class Body implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.SEC)) {
+            if (nodeName.equalsIgnoreCase(Element.SECTION)) {
                 stringBuilder.append(new BodySec(childNode).getElement());
             }
         }

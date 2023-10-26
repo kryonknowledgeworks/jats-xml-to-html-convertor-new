@@ -28,11 +28,11 @@ public class Back implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.SEC)) {
+            if (nodeName.equalsIgnoreCase(Element.SECTION)) {
                 tag = new BackSec(childNode);
             } else if (nodeName.equalsIgnoreCase(Element.ACK)) {
                 tag = new Ack(childNode);
-            } else if (nodeName.equalsIgnoreCase(Element.REF_LIST)) {
+            } else if (nodeName.equalsIgnoreCase(Element.REFERENCE_LIST)) {
                 tag = new RefList(childNode);
             }
 

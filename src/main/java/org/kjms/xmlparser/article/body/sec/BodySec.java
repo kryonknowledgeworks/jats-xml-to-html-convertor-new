@@ -2,11 +2,8 @@ package org.kjms.xmlparser.article.body.sec;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.utils.NodeUtils;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
-
-import java.util.List;
 
 public class BodySec implements Tag {
 
@@ -32,7 +29,7 @@ public class BodySec implements Tag {
                 stringBuilder.append(new BodySecTitle(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.PARAGRAPH)) {
                 stringBuilder.append(new BodySecP(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.SEC)) {
+            } else if (nodeName.equalsIgnoreCase(Element.SECTION)) {
                 stringBuilder.append(new BodySec(childNode).getElement());
             }
         }

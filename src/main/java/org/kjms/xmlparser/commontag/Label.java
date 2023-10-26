@@ -2,10 +2,10 @@ package org.kjms.xmlparser.commontag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.commontag.baselinechangeelements.BaselineChangeElements;
-import org.kjms.xmlparser.commontag.emphasiselements.EmphasisElements;
-import org.kjms.xmlparser.commontag.inlinedisplayElements.InlineDisplayElements;
-import org.kjms.xmlparser.commontag.inlinemathelements.InlineMathElements;
+import org.kjms.xmlparser.commontag.group.BaselineChangeElements;
+import org.kjms.xmlparser.commontag.group.EmphasisElements;
+import org.kjms.xmlparser.commontag.group.InlineDisplayElements;
+import org.kjms.xmlparser.commontag.group.InlineMathElements;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 

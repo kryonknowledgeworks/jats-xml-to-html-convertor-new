@@ -21,7 +21,7 @@ public class KwdGroup implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.KWD)) {
+            if (nodeName.equalsIgnoreCase(Element.KEYWORD)) {
                 stringBuilder.append(new Kwd(childNode).getElement());
             }
         }

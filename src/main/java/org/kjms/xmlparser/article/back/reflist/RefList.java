@@ -29,7 +29,7 @@ public class RefList implements Tag {
                 tag = new RefListTitle(childNode);
             } else if (nodeName.equalsIgnoreCase(Element.REF)) {
                 tag = new Ref(childNode);
-            } else if (nodeName.equalsIgnoreCase(Element.REF_LIST)) {
+            } else if (nodeName.equalsIgnoreCase(Element.REFERENCE_LIST)) {
                 tag = new RefList(childNode);
             }
 

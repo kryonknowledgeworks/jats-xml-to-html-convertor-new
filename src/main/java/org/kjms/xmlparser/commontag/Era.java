@@ -7,7 +7,6 @@ import org.w3c.dom.Node;
 public class Era implements Tag {
     private final Node node;
 
-
     public Era(Node node) {
         this.node = node;
     }

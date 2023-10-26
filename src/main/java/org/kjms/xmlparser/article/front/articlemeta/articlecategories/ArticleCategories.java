@@ -2,9 +2,7 @@ package org.kjms.xmlparser.article.front.articlemeta.articlecategories;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.article.front.articlemeta.ArticleId;
 import org.kjms.xmlparser.article.front.articlemeta.articlecategories.subjgroup.SubjGroup;
-import org.kjms.xmlparser.utils.NodeUtils;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -26,7 +24,7 @@ public class ArticleCategories implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.SUBJ_GROUP)) {
+            if (nodeName.equalsIgnoreCase(Element.SUBJECT_GROUP)) {
                 stringBuilder.append(new SubjGroup(childNode).getElement());
             }
         }

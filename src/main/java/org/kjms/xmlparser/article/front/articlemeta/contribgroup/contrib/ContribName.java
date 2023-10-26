@@ -1,7 +1,7 @@
 package org.kjms.xmlparser.article.front.articlemeta.contribgroup.contrib;
 
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.commontag.name.Name;
+import org.kjms.xmlparser.commontag.Name;
 import org.w3c.dom.Node;
 
 public class ContribName implements Tag {

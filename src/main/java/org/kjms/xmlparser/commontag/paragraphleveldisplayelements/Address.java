@@ -2,8 +2,8 @@ package org.kjms.xmlparser.commontag.paragraphleveldisplayelements;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.commontag.linkingelements.LinkingElement;
-import org.kjms.xmlparser.commontag.addresselements.AddressElements;
+import org.kjms.xmlparser.commontag.group.LinkingElement;
+import org.kjms.xmlparser.commontag.group.AddressElements;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 

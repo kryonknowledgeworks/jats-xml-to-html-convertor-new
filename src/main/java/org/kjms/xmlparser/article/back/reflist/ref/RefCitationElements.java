@@ -1,7 +1,7 @@
 package org.kjms.xmlparser.article.back.reflist.ref;
 
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.commontag.citationelements.CitationElements;
+import org.kjms.xmlparser.commontag.group.CitationElements;
 import org.w3c.dom.Node;
 
 public class RefCitationElements implements Tag {

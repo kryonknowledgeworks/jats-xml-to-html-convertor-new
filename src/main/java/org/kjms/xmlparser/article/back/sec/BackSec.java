@@ -27,7 +27,7 @@ public class BackSec implements Tag {
                 tag = new BackSecTitle(childNode);
             } else if (nodeName.equalsIgnoreCase(Element.PARAGRAPH)) {
                 tag = new BackSecP(childNode);
-            } else if (nodeName.equalsIgnoreCase(Element.SEC)) {
+            } else if (nodeName.equalsIgnoreCase(Element.SECTION)) {
                 tag = new BackSec(childNode);
             }
 

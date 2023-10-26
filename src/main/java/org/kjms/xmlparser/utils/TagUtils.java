@@ -79,7 +79,19 @@ public interface TagUtils {
         return "<rb> " + data + " </rb>";
     }
 
+    static String addRubyTag(String data) {
+        return "<ruby> " + data + " </ruby>";
+    }
+
     static String addRtTag(String data) {
         return "<rt> " + data + " </rt>";
+    }
+
+    static String addSupTag(String data) {
+        return "<sup> " + data + " </sup>";
+    }
+
+    static String addSuBTag(String data) {
+        return "<sub> " + data + " </sub>";
     }
 }

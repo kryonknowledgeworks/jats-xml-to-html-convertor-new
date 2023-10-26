@@ -23,7 +23,7 @@ public class Licence implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.LICENSE_P)) {
+            if (nodeName.equalsIgnoreCase(Element.LICENSE_PARAGRAPH)) {
                 stringBuilder.append(new LicenseP(childNode).getElement());
             }
         }
