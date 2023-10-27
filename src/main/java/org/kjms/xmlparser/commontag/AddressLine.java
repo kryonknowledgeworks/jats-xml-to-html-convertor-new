@@ -35,8 +35,8 @@ public class AddressLine implements Tag {
                 stringBuilder.append(new Fax(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.INSTITUTION)) {
                 stringBuilder.append(new Institution(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.INSTITUTION_WRAP)) {
-                stringBuilder.append(new InstitutionWrap(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.INSTITUTION_WRAPPER)) {
+                stringBuilder.append(new InstitutionWrapper(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.PHONE)) {
                 stringBuilder.append(new Phone(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.POSTAL_CODE)) {

@@ -2,7 +2,6 @@ package org.kjms.xmlparser.commontag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
 public class IssueTitleGroup implements Tag {
@@ -25,8 +24,8 @@ public class IssueTitleGroup implements Tag {
                 stringBuilder.append(new IssueTitle(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ISSUE_SUBTITLE)) {
                 stringBuilder.append(new IssueSubtitle(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.TRANS_TITLE_GROUP)) {
-                stringBuilder.append(new TransTitleGroup(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.TRANSLATED_TITLE_GROUP)) {
+                stringBuilder.append(new TranslatedTitleGroup(childNode).getElement());
             }
         }
 

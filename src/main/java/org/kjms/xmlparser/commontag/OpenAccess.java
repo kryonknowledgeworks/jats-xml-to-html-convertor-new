@@ -2,12 +2,13 @@ package org.kjms.xmlparser.commontag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
+import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
-public class TransTitleGroup implements Tag {
+public class OpenAccess implements Tag {
     private final Node node;
 
-    public TransTitleGroup(Node node) {
+    public OpenAccess(Node node) {
         this.node = node;
     }
 
@@ -20,13 +21,11 @@ public class TransTitleGroup implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.TRANS_TITLE)) {
-                stringBuilder.append(new TransTitle(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.TRANS_SUBTITLE)) {
-                stringBuilder.append(new TransSubtitle(childNode).getElement());
+            if (nodeName.equalsIgnoreCase(Element.PARAGRAPH)) {
+                stringBuilder.append(new Paragraph(childNode).getElement());
             }
         }
 
-        return stringBuilder.toString();
+        return TagUtils.addSpanTag(stringBuilder.toString());
     }
 }

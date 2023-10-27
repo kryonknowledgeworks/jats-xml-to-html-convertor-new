@@ -26,8 +26,8 @@ public class CopyrightHolder implements Tag {
                 stringBuilder.append(TagUtils.addSpanTag(childNode.getTextContent()));
             } else if (nodeName.equalsIgnoreCase(Element.INSTITUTION)) {
                 stringBuilder.append(new Institution(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.INSTITUTION_WRAP)) {
-                stringBuilder.append(new InstitutionWrap(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.INSTITUTION_WRAPPER)) {
+                stringBuilder.append(new InstitutionWrapper(childNode).getElement());
             } else if (Element.BASELINE_CHANGE_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new BaselineChangeElements(childNode).getElement());
             }

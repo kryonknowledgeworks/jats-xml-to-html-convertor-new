@@ -94,4 +94,28 @@ public interface TagUtils {
     static String addSuBTag(String data) {
         return "<sub> " + data + " </sub>";
     }
+
+    static String addTrTag(String data) {
+        return "<tr> " + data + " </tr>";
+    }
+
+    static String addTdTag(String data) {
+        return "<td> " + data + " </td>";
+    }
+
+    static String addThTag(String data) {
+        return "<th> " + data + " </th>";
+    }
+
+    static String addTHeadTag(String data) {
+        return "<thead> " + data + " </thead>";
+    }
+
+    static String addTFootTag(String data) {
+        return "<tfoot> " + data + " </tfoot>";
+    }
+
+    static String addTBodyTag(String data) {
+        return "<tbody> " + data + " </tbody>";
+    }
 }

@@ -2,19 +2,18 @@ package org.kjms.xmlparser.commontag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.commontag.Institution;
-import org.kjms.xmlparser.commontag.InstitutionId;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
-public class InstitutionWrap implements Tag {
+public class THead implements Tag {
     private final Node node;
 
-    public InstitutionWrap(Node node) {
+    public THead(Node node) {
         this.node = node;
     }
 
     public String getElement() {
+
         StringBuilder stringBuilder = new StringBuilder();
 
         for (int i = 0; i < node.getChildNodes().getLength(); i++) {
@@ -23,13 +22,11 @@ public class InstitutionWrap implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.INSTITUTION)) {
-                stringBuilder.append(new Institution(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.INSTITUTION_ID)) {
-                stringBuilder.append(new InstitutionId(childNode).getElement());
+            if (nodeName.equalsIgnoreCase(Element.TABLE_ROW)) {
+                stringBuilder.append(new TableRow(childNode).getElement());
             }
         }
 
-        return TagUtils.addDivTag(stringBuilder.toString());
+        return TagUtils.addTHeadTag(stringBuilder.toString());
     }
 }
