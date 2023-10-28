@@ -227,7 +227,10 @@ public final class Element {
     public static final String PUBLISHER_LOCATION = "publisher-loc";
     public static final String PUBLISHER_NAME = "publisher-name";
     public static final String SIZE = "size";
+    public static final String SIGNATURE = "sig";
+    public static final String SIGNATURE_BLOCK = "sig-block";
     public static final String STANDARD = "std";
+    public static final String STANDARD_ORGANIZATION = "std-organization";
     public static final String STRING_NAME = "string-name";
     public static final String STRING_DATE = "string-date";
     public static final String SUPPLEMENT = "supplement";
