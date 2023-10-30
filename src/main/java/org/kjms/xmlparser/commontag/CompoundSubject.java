@@ -22,8 +22,8 @@ public class CompoundSubject implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.COMPOUND_SUBJECT)) {
-                stringBuilder.append(new CompoundSubject(childNode).getElement());
+            if (nodeName.equalsIgnoreCase(Element.COMPOUND_SUBJECT_PART)) {
+                stringBuilder.append(new CompoundSubjectPart(childNode).getElement());
             }
         }
 

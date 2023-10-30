@@ -21,19 +21,23 @@ public interface TagUtils {
     }
 
     static String addDivTag(String data) {
-        return "<div>" + data + "</div>";
+        return "<div> " + data + " </div>";
     }
 
     static String addDivTag(String data, String id) {
-        return "<div id=" + id + ">" + data + "</div>";
+        return "<div id=" + id + "> " + data + " </div>";
+    }
+
+    static String addDivAndClassTag(String data, String clazz) {
+        return "<div class=" + clazz + "> " + data + " </div>";
     }
 
     static String addLabelTag(String data) {
-        return "<label>" + data + "</label>";
+        return "<label> " + data + " </label>";
     }
 
     static String addATag(String data) {
-        return "<a href=" + data + ">" + data + "</a>";
+        return " <a href=" + data + "> " + data + " </a> ";
     }
 
     static String addATag(Map<String, String> attributes, String link) {

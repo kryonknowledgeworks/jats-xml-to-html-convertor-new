@@ -49,6 +49,6 @@ public class AlternateTitle implements Tag {
             }
         }
 
-        return TagUtils.addSpanTag(node.getTextContent());
+        return TagUtils.addDivTag(stringBuilder.toString());
     }
 }

@@ -12,6 +12,6 @@ public class AwardDescription implements Tag {
     }
 
     public String getElement() {
-        return TagUtils.addSpanTag(node.getTextContent());
+        return TagUtils.addPTag(node.getTextContent());
     }
 }

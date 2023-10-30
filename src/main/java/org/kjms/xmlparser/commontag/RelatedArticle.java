@@ -2,7 +2,6 @@ package org.kjms.xmlparser.commontag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.article.front.articlemeta.titlegroup.ArticleTitle;
 import org.kjms.xmlparser.commontag.group.*;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
@@ -57,7 +56,7 @@ public class RelatedArticle implements Tag {
             } else if (nodeName.equalsIgnoreCase(Element.DATE)) {
                 stringBuilder.append(new Date(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.DATE_IN_CITATION)) {
-                stringBuilder.append(new DateWithinCitation(childNode).getElement());
+                stringBuilder.append(new DateInCitation(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.DAY)) {
                 stringBuilder.append(new Day(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.EDITION)) {

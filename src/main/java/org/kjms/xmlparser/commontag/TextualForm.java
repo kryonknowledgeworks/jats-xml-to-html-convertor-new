@@ -2,7 +2,6 @@ package org.kjms.xmlparser.commontag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.article.front.articlemeta.titlegroup.ArticleTitle;
 import org.kjms.xmlparser.commontag.group.BaselineChangeElements;
 import org.kjms.xmlparser.commontag.group.EmphasisElements;
 import org.kjms.xmlparser.commontag.group.InlineDisplayElements;

@@ -5,7 +5,6 @@ import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.commontag.group.BaselineChangeElements;
 import org.kjms.xmlparser.commontag.group.EmphasisElements;
 import org.kjms.xmlparser.commontag.group.InlineDisplayElements;
-import org.kjms.xmlparser.commontag.group.LinkingElement;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 

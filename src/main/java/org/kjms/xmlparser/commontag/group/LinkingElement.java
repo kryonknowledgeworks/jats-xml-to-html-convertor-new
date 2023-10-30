@@ -18,24 +18,19 @@ public class LinkingElement implements Tag {
     public String getElement() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
+        final String nodeName = node.getNodeName();
 
-            Node childNode = node.getChildNodes().item(i);
+        if (nodeName.equalsIgnoreCase(Element.EMAIL)) {
+            stringBuilder.append(TagUtils.addATag(Map.of("href", "mailto:" + node.getTextContent()), node.getTextContent()));
+        } else if (nodeName.equalsIgnoreCase(Element.EXT_LINK)) {
+            stringBuilder.append(new ExternalLink(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.URI)) {
 
-            final String nodeName = childNode.getNodeName();
+            Map<String, String> map = Map.of("xlink:href", node.getTextContent());
 
-            if (nodeName.equalsIgnoreCase(Element.EMAIL)) {
-                stringBuilder.append(TagUtils.addLabelTag(childNode.getTextContent()));
-            } else if (nodeName.equalsIgnoreCase(Element.EXT_LINK)) {
-                stringBuilder.append(new ExternalLink(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.URI)) {
-
-                Map<String, String> map = Map.of("xlink:href", childNode.getTextContent());
-
-                stringBuilder.append(TagUtils.addATag(map, childNode.getTextContent()));
-            }
+            stringBuilder.append(TagUtils.addATag(map, node.getTextContent()));
         }
 
-        return TagUtils.addDivTag(stringBuilder.toString());
+        return stringBuilder.toString();
     }
 }

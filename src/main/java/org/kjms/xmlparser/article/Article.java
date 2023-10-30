@@ -1,12 +1,8 @@
 package org.kjms.xmlparser.article;
 
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.article.back.Back;
-import org.kjms.xmlparser.article.body.Body;
-import org.kjms.xmlparser.article.front.Front;
 import org.kjms.xmlparser.Element;
-import org.kjms.xmlparser.utils.NodeUtils;
-import org.kjms.xmlparser.utils.TagUtils;
+import org.kjms.xmlparser.commontag.*;
 import org.w3c.dom.Node;
 
 public class Article implements Tag {
@@ -19,17 +15,33 @@ public class Article implements Tag {
 
     public String getElement() {
 
-        Front front = new Front(NodeUtils.getNode(node, Element.FRONT));
+        StringBuilder stringBuilder = new StringBuilder();
 
-        Back back = new Back(NodeUtils.getNode(node, Element.BACK));
+        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
 
-        Body body = new Body(NodeUtils.getNode(node, Element.BODY));
+            Node childNode = node.getChildNodes().item(i);
 
-        String bodyElement = front.getElement() + body.getElement() + back.getElement();
+            final String nodeName = childNode.getNodeName();
 
-        return TagUtils.addBodyTag(bodyElement, "overflow-x:hidden", "0");
+            if (nodeName.equalsIgnoreCase(Element.PROCESSING_META)) {
+                stringBuilder.append(new ProcessingMeta(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.FRONT)) {
+                stringBuilder.append(new Front(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.BODY)) {
+                stringBuilder.append(new Front(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.BACK)) {
+                stringBuilder.append(new Front(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.FLOATS_GROUP)) {
+                stringBuilder.append(new FloatsGroup(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.SUB_ARTICLE) || nodeName.equalsIgnoreCase(Element.RESPONSE)) {
+                if (nodeName.equalsIgnoreCase(Element.SUB_ARTICLE)) {
+                    stringBuilder.append(new SubArticle(childNode).getElement());
+                } else {
+                    stringBuilder.append(new Response(childNode).getElement());
+                }
+            }
+        }
 
-//        return String.format("<body style=overflow-x:hidden;margin:0;> %s </body>", front.getElement(), back.getElement());
-
+        return stringBuilder.toString();
     }
 }

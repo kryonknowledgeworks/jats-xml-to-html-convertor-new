@@ -2,7 +2,6 @@ package org.kjms.xmlparser.commontag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.article.back.Back;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 

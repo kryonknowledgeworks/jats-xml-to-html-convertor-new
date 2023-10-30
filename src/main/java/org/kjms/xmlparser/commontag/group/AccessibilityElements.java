@@ -17,19 +17,14 @@ public class AccessibilityElements implements Tag {
     public String getElement() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
+        final String nodeName = node.getNodeName();
 
-            Node childNode = node.getChildNodes().item(i);
-
-            final String nodeName = childNode.getNodeName();
-
-            if (nodeName.equalsIgnoreCase(Element.ALTERNATE_TEXT)) {
-                stringBuilder.append(new AlternateText(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.LONG_DESCRIPTION)) {
-                stringBuilder.append(new LongDescription(childNode).getElement());
-            }
+        if (nodeName.equalsIgnoreCase(Element.ALTERNATE_TEXT)) {
+            stringBuilder.append(new AlternateText(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.LONG_DESCRIPTION)) {
+            stringBuilder.append(new LongDescription(node).getElement());
         }
 
-        return TagUtils.addDivTag(stringBuilder.toString());
+        return stringBuilder.toString();
     }
 }

@@ -16,33 +16,28 @@ public class AddressElements implements Tag {
     public String getElement() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
+        final String nodeName = node.getNodeName();
 
-            Node childNode = node.getChildNodes().item(i);
-
-            final String nodeName = childNode.getNodeName();
-
-            if (nodeName.equalsIgnoreCase(Element.ADDRESS_LINE)) {
-                stringBuilder.append(new AddressLine(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.CITY)) {
-                stringBuilder.append(new City(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.COUNTRY)) {
-                stringBuilder.append(new Country(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.FAX)) {
-                stringBuilder.append(new Fax(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.INSTITUTION)) {
-                stringBuilder.append(new Institution(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.INSTITUTION_WRAPPER)) {
-                stringBuilder.append(new InstitutionWrapper(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.PHONE)) {
-                stringBuilder.append(new Phone(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.POSTAL_CODE)) {
-                stringBuilder.append(new PostalCode(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.STATE)) {
-                stringBuilder.append(new State(childNode).getElement());
-            }
+        if (nodeName.equalsIgnoreCase(Element.ADDRESS_LINE)) {
+            stringBuilder.append(new AddressLine(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.CITY)) {
+            stringBuilder.append(new City(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.COUNTRY)) {
+            stringBuilder.append(new Country(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.FAX)) {
+            stringBuilder.append(new Fax(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.INSTITUTION)) {
+            stringBuilder.append(new Institution(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.INSTITUTION_WRAPPER)) {
+            stringBuilder.append(new InstitutionWrapper(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.PHONE)) {
+            stringBuilder.append(new Phone(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.POSTAL_CODE)) {
+            stringBuilder.append(new PostalCode(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.STATE)) {
+            stringBuilder.append(new State(node).getElement());
         }
 
-        return TagUtils.addDivTag(stringBuilder.toString());
+        return stringBuilder.toString();
     }
 }

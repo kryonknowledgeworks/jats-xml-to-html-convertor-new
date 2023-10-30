@@ -6,11 +6,15 @@ public final class Element {
     private Element() {
     }
 
+    public static final String APPENDIX = "app";
+    public static final String APPENDIX_GROUP = "app-group";
     public static final String FRONT = "front";
     public static final String FRONT_STUB = "front-stub";
     public static final String BACK = "back";
     public static final String BODY = "body";
     public static final String ARTICLE_META = "article-meta";
+    public static final String ARTICLE_VERSION = "article-version";
+    public static final String ARTICLE_VERSION_ALTERNATIVES = "article-version-alternatives";
     public static final String ARTICLE_CATEGORIES = "article-categories";
     public static final String ARTICLE_ID = "article-id";
     public static final String SUBJECT_GROUP = "subj-group";
@@ -37,13 +41,17 @@ public final class Element {
 
     public static final String TEXT = "#text";
     public static final String AUTHOR_NOTES = "author-notes";
+    public static final String NOTE = "note";
+    public static final String NOTES = "notes";
     public static final String AUTHOR_COMMENT = "author-comment";
     public static final String BIOGRAPHY = "bio";
     public static final String ON_BEHALF_OF = "on-behalf-of";
-    public static final String CORRESP = "corresp";
+    public static final String CORRESPONDENCE = "corresp";
     public static final String SPEECH = "speech";
     public static final String SEE = "see";
     public static final String SEE_ALSO = "see-also";
+    public static final String SANS_SERIF = "sans-serif";
+    public static final String SELF_URI = "self-uri";
     public static final String SPEAKER = "speaker";
     public static final String STATEMENT = "statement";
     public static final String VERSION = "version";
@@ -63,7 +71,7 @@ public final class Element {
     public static final String PARAGRAPH = "p";
     public static final String ACK = "ack";
     public static final String REFERENCE_LIST = "ref-list";
-    public static final String REF = "ref";
+    public static final String REFERENCE = "ref";
     public static final String CITATION_ALTERNATIVES = "citation-alternatives";
     public static final String ELEMENT_CITATION = "element-citation";
     public static final String MIXED_CITATION = "mixed-citation";
@@ -77,12 +85,14 @@ public final class Element {
     public static final String SOURCE = "source";
     public static final String YEAR = "year";
     public static final String VOLUME = "volume";
+    public static final String VOLUME_ISSUE_GROUP = "volume-issue-group";
     public static final String ISSUE = "issue";
     public static final String FPAGE = "fpage";
     public static final String LPAGE = "lpage";
     public static final String COMMENT = "comment";
     public static final String EXT_LINK = "ext-link";
-    public static final String PUB_DATE = "pub-date";
+    public static final String PUBLICATION_DATE = "pub-date";
+    public static final String PUBLICATION_DATE_NOT_AVAILABLE = "pub-date-not-available";
     public static final String HISTORY = "history";
     public static final String PERMISSIONS = "permissions";
     public static final String ABSTRACT = "abstract";
@@ -104,7 +114,6 @@ public final class Element {
     public static final String MONOSPACE_TEXT = "monospace";
     public static final String OVERLINE = "overline";
     public static final String ROMAN = "roman";
-    public static final String SANS_SERIF = "sans-serif";
     public static final String SMALL_CAPS = "sc";
     public static final String STRIKE = "strike";
     public static final String UNDERLINE = "underline";
@@ -168,6 +177,10 @@ public final class Element {
     public static final String STATE = "state";
     public static final String OBJECT_ID = "object-id";
     public static final String JOURNAL_ID = "journal-id";
+    public static final String JOURNAL_TITLE = "journal-title";
+    public static final String JOURNAL_SUBTITLE = "journal-subtitle";
+    public static final String JOURNAL_TITLE_GROUP = "journal-title-group";
+    public static final String JOURNAL_META = "journal-meta";
     public static final String CAPTION = "caption";
     public static final String CONFERENCE = "conference";
     public static final String CONFERENCE_NUMBER = "conf-num";
@@ -195,6 +208,8 @@ public final class Element {
     public static final String AWARD_GROUP = "award-group";
     public static final String AWARD_DESCRIPTION = "award-desc";
     public static final String PROCESSING_META = "processing-meta";
+    public static final String PRODUCT = "product";
+    public static final String PRICE = "price";
     public static final String FLOATS_GROUP = "floats-group";
     public static final String PRINCIPAL_AWARD_RECIPIENT = "principal-award-recipient";
     public static final String PRINCIPAL_INVESTIGATOR = "principal-investigator";
@@ -224,7 +239,9 @@ public final class Element {
     public static final String ISSN_LINKING = "issn-l";
     public static final String PAGE_RANGE = "page-range";
     public static final String PUBLICATION_ID = "pub-id";
+    public static final String PUBLICATION_HISTORY = "pub-history";
     public static final String PUBLISHER_LOCATION = "publisher-loc";
+    public static final String PUBLISHER = "publisher";
     public static final String PUBLISHER_NAME = "publisher-name";
     public static final String SIZE = "size";
     public static final String SIGNATURE = "sig";
@@ -240,6 +257,7 @@ public final class Element {
     public static final String TEX_MATH_EQUATION = "tex-math";
     public static final String MATH = "mml:math";
     public static final String ABBREVIATION = "abbrev";
+    public static final String ABBREVIATION_JOURNAL_TITLE = "abbrev-journal-title";
     public static final String INDEX_TERM = "index-term";
     public static final String TERM = "term";
     public static final String INDEX_TERM_RANGE_END = "index-term-range-end";
@@ -266,6 +284,8 @@ public final class Element {
     public static final String VOLUME_ID = "volume-id";
     public static final String VOLUME_SERIES = "volume-series";
     public static final String SERIES = "series";
+    public static final String SERIES_TITLE = "series-title";
+    public static final String SERIES_TEXT = "series-text";
     public static final String ISSUE_ID = "issue-id";
     public static final String ISSUE_TITLE = "issue-title";
     public static final String ISSUE_TITLE_GROUP = "issue-title-group";

@@ -16,29 +16,24 @@ public class OtherInlineElements implements Tag {
     public String getElement() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
+        final String nodeName = node.getNodeName();
 
-            Node childNode = node.getChildNodes().item(i);
-
-            final String nodeName = childNode.getNodeName();
-
-            if (nodeName.equalsIgnoreCase(Element.ABBREVIATION)) {
-                stringBuilder.append(new Abbreviation(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.INDEX_TERM)) {
-                stringBuilder.append(new IndexTerm(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.INDEX_TERM_RANGE_END)) {
-                stringBuilder.append(new IndexTermRangeEnd(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.MILESTONE_END)) {
-                stringBuilder.append(new MilestoneEnd(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.MILESTONE_START)) {
-                stringBuilder.append(new MilestoneStart(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.NAMED_SPECIAL_CONTENT)) {
-                stringBuilder.append(new NamedSpecialContent(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.STYLED_SPECIAL_CONTENT)) {
-                stringBuilder.append(new StyledSpecialContent(childNode).getElement());
-            }
+        if (nodeName.equalsIgnoreCase(Element.ABBREVIATION)) {
+            stringBuilder.append(new Abbreviation(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.INDEX_TERM)) {
+            stringBuilder.append(new IndexTerm(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.INDEX_TERM_RANGE_END)) {
+            stringBuilder.append(new IndexTermRangeEnd(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.MILESTONE_END)) {
+            stringBuilder.append(new MilestoneEnd(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.MILESTONE_START)) {
+            stringBuilder.append(new MilestoneStart(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.NAMED_SPECIAL_CONTENT)) {
+            stringBuilder.append(new NamedSpecialContent(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.STYLED_SPECIAL_CONTENT)) {
+            stringBuilder.append(new StyledSpecialContent(node).getElement());
         }
 
-        return TagUtils.addDivTag(stringBuilder.toString());
+        return stringBuilder.toString();
     }
 }

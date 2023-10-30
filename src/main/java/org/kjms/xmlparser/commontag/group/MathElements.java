@@ -19,17 +19,12 @@ public class MathElements implements Tag {
     public String getElement() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
+        final String nodeName = node.getNodeName();
 
-            Node childNode = node.getChildNodes().item(i);
-
-            final String nodeName = childNode.getNodeName();
-
-            if (nodeName.equalsIgnoreCase(Element.TEX_MATH_EQUATION)) {
-                stringBuilder.append(new TexMath(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.MATH)) {
-                stringBuilder.append(new MathElement(childNode).getElement());
-            }
+        if (nodeName.equalsIgnoreCase(Element.TEX_MATH_EQUATION)) {
+            stringBuilder.append(new TexMath(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.MATH)) {
+            stringBuilder.append(new MathElement(node).getElement());
         }
 
         return TagUtils.addDivTag(stringBuilder.toString());

@@ -18,21 +18,16 @@ public class InlineDisplayElements implements Tag {
     public String getElement() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
+        final String nodeName = node.getNodeName();
 
-            Node childNode = node.getChildNodes().item(i);
-
-            final String nodeName = childNode.getNodeName();
-
-            if (nodeName.equalsIgnoreCase(Element.INLINE_GRAPHIC)) {
-                stringBuilder.append(new InlineGraphic(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.INLINE_MEDIA_OBJECT)) {
-                stringBuilder.append(new InlineMedia(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.PRIVATE_CHARACTER)) {
-                stringBuilder.append(new PrivateCharacter(childNode).getElement());
-            }
+        if (nodeName.equalsIgnoreCase(Element.INLINE_GRAPHIC)) {
+            stringBuilder.append(new InlineGraphic(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.INLINE_MEDIA_OBJECT)) {
+            stringBuilder.append(new InlineMedia(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.PRIVATE_CHARACTER)) {
+            stringBuilder.append(new PrivateCharacter(node).getElement());
         }
 
-        return TagUtils.addDivTag(stringBuilder.toString());
+        return stringBuilder.toString();
     }
 }
