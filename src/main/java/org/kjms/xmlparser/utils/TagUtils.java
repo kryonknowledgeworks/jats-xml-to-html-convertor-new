@@ -55,6 +55,10 @@ public interface TagUtils {
         return "<b>" + data + "</b>";
     }
 
+    static String addPreTag(String data) {
+        return "<pre>" + data + "</pre>";
+    }
+
     static String addITag(String data) {
         return "<i> " + data + " </i>";
     }
@@ -69,6 +73,12 @@ public interface TagUtils {
 
     static String addSpanTag(String data) {
         return "<span> " + data + " </span>";
+    }
+    static String addTableTag(String data) {
+        return "<table> " + data + " </table>";
+    }
+    static String addSpanAndClassTag(String data, String clazz) {
+        return "<span class=" + clazz + " > " + data + " </span>";
     }
 
     static String addSTag(String data) {

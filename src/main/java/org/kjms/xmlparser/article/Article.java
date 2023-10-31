@@ -2,7 +2,7 @@ package org.kjms.xmlparser.article;
 
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.Element;
-import org.kjms.xmlparser.commontag.*;
+import org.kjms.xmlparser.tag.*;
 import org.w3c.dom.Node;
 
 public class Article implements Tag {
@@ -28,9 +28,9 @@ public class Article implements Tag {
             } else if (nodeName.equalsIgnoreCase(Element.FRONT)) {
                 stringBuilder.append(new Front(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.BODY)) {
-                stringBuilder.append(new Front(childNode).getElement());
+                stringBuilder.append(new Body(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.BACK)) {
-                stringBuilder.append(new Front(childNode).getElement());
+                stringBuilder.append(new Back(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.FLOATS_GROUP)) {
                 stringBuilder.append(new FloatsGroup(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.SUB_ARTICLE) || nodeName.equalsIgnoreCase(Element.RESPONSE)) {

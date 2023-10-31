@@ -6,6 +6,7 @@ public final class Element {
     private Element() {
     }
 
+    public static final String ARTICLE = "article";
     public static final String APPENDIX = "app";
     public static final String APPENDIX_GROUP = "app-group";
     public static final String FRONT = "front";
@@ -43,6 +44,7 @@ public final class Element {
     public static final String AUTHOR_NOTES = "author-notes";
     public static final String NOTE = "note";
     public static final String NOTES = "notes";
+    public static final String NESTED_KEYWORD = "nested-kwd";
     public static final String AUTHOR_COMMENT = "author-comment";
     public static final String BIOGRAPHY = "bio";
     public static final String ON_BEHALF_OF = "on-behalf-of";
@@ -145,10 +147,12 @@ public final class Element {
     public static final String PREFORMATTED_TEXT = "preformat";
     public static final String QUESTION = "question";
     public static final String QUESTION_WRAPPER = "question-wrap";
+    public static final String QUESTION_PREAMBLE = "question-preamble";
     public static final String QUESTION_WRAPPER_GROUP = "question-wrap-group";
     public static final String SUPPLEMENTARY_MATERIAL_METADATA = "supplementary-material";
     public static final String TABLE_WRAPPER = "table-wrap";
     public static final String TABLE_WRAPPER_GROUP = "table-wrap-group";
+    public static final String TABLE_WRAPPER_FOOT = "table-wrap-foot";
     public static final String TRANS_ABSTRACT = "trans-abstract";
     public static final String TRANS_SOURCE = "trans-source";
     public static final String TIME_STAMP = "time-stamp";
@@ -189,6 +193,7 @@ public final class Element {
     public static final String COMPOUND_KEYWORD_PART = "compound-kwd-part";
     public static final String COMPOUND_SUBJECT = "compound-subject";
     public static final String DEFINITION = "def";
+    public static final String DEFINITION_HEAD = "def-head";
     public static final String DEFINITION_ITEM = "def-item";
     public static final String COMPOUND_SUBJECT_PART = "compound-subject-part";
     public static final String TABLE = "table";
@@ -202,7 +207,7 @@ public final class Element {
     public static final String FUNDING_GROUP = "funding-group";
     public static final String FUNDING_SOURCE = "funding-source";
     public static final String CONTRIBUTED_RESOURCE_GROUP = "contributed-resource-group";
-    public static final String ATTRIBUTION = "attribution";
+    public static final String ATTRIBUTION = "attrib";
     public static final String AWARD_ID = "award-id";
     public static final String AWARD_NAME = "award-name";
     public static final String AWARD_GROUP = "award-group";
@@ -260,6 +265,7 @@ public final class Element {
     public static final String ABBREVIATION_JOURNAL_TITLE = "abbrev-journal-title";
     public static final String INDEX_TERM = "index-term";
     public static final String TERM = "term";
+    public static final String TERM_HEAD = "term-head";
     public static final String INDEX_TERM_RANGE_END = "index-term-range-end";
     public static final String MILESTONE_END = "milestone-end";
     public static final String MILESTONE_START = "milestone-start";
