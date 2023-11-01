@@ -4,10 +4,6 @@ import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.tag.group.EmphasisElements;
 import org.kjms.xmlparser.tag.group.*;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.ArrayElement;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.Code;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.Media;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.Preformat;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -58,10 +54,10 @@ public class Term implements Tag {
             } else if (nodeName.equalsIgnoreCase(Element.CODE)) {
                 stringBuilder.append(new Code(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.GRAPHIC)) {
-                stringBuilder.append(new Code(childNode).getElement());
+                stringBuilder.append(new Graphic(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.MEDIA)) {
                 stringBuilder.append(new Media(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.PREFORMATTED_TEXT)) {
+            } else if (nodeName.equalsIgnoreCase(Element.PREFORMAT)) {
                 stringBuilder.append(new Preformat(childNode).getElement());
             }
         }

@@ -23,7 +23,7 @@ public class EmphasisElements implements Tag {
             stringBuilder.append(new FixedCase(node).getElement());
         } else if (nodeName.equalsIgnoreCase(Element.ITALIC)) {
             stringBuilder.append(new Italic(node).getElement());
-        } else if (nodeName.equalsIgnoreCase(Element.MONOSPACE_TEXT)) {
+        } else if (nodeName.equalsIgnoreCase(Element.MONOSPACE)) {
             stringBuilder.append(new Monospace(node).getElement());
         } else if (nodeName.equalsIgnoreCase(Element.OVERLINE)) {
             stringBuilder.append(new Overlined(node).getElement());

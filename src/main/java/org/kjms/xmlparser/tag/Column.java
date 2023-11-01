@@ -12,6 +12,6 @@ public class Column implements Tag {
     }
 
     public String getElement() {
-        return TagUtils.addSpanTag(node.getTextContent());
+        return "";
     }
 }

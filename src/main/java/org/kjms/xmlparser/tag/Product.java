@@ -137,14 +137,16 @@ public class Product implements Tag {
                 stringBuilder.append(new Source(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.STANDARD)) {
                 stringBuilder.append(new Standard(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.STRING_DATE)) {
+            } else if (nodeName.equalsIgnoreCase(Element.STRING_NAME)) {
                 stringBuilder.append(new StringName(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.STRING_DATE)) {
+                stringBuilder.append(new StringDate(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.SUPPLEMENT)) {
                 stringBuilder.append(new Supplement(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.TRANS_SOURCE)) {
-                stringBuilder.append(new TransSource(childNode).getElement());
+                stringBuilder.append(new TranslatedSource(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.TRANS_TITLE)) {
-                stringBuilder.append(new TransTitle(childNode).getElement());
+                stringBuilder.append(new TranslatedTitle(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.VERSION)) {
                 stringBuilder.append(new Version(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.VOLUME)) {

@@ -29,16 +29,18 @@ public class InlineFormula implements Tag {
                 stringBuilder.append(new AccessibilityElements(childNode).getElement());
             } else if (Element.EMPHASIS_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new EmphasisElements(childNode).getElement());
-            } else if (Element.INLINE_DISPLAY_ELEMENTS.contains(nodeName)) {
+            } else if (nodeName.equalsIgnoreCase(Element.ALTERNATIVES)) {
+                stringBuilder.append(new Alternatives(childNode).getElement());
+            }  else if (Element.INLINE_DISPLAY_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new InlineDisplayElements(childNode).getElement());
             } else if (Element.INLINE_MATH_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new InlineMathElements(childNode).getElement());
             } else if (Element.MATH_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new MathElements(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.NAMED_SPECIAL_CONTENT)) {
-                stringBuilder.append(new NamedSpecialContent(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.STYLED_SPECIAL_CONTENT)) {
-                stringBuilder.append(new StyledSpecialContent(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.NAMED_CONTENT)) {
+                stringBuilder.append(new NamedContent(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.STYLED_CONTENT)) {
+                stringBuilder.append(new StyledContent(childNode).getElement());
             } else if (Element.BASELINE_CHANGE_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new BaselineChangeElements(childNode).getElement());
             }

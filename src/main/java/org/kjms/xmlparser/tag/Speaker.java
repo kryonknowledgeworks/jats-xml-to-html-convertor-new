@@ -2,6 +2,8 @@ package org.kjms.xmlparser.tag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
+import org.kjms.xmlparser.tag.group.EmphasisElements;
+import org.kjms.xmlparser.tag.group.InternalLinkingElements;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -33,6 +35,8 @@ public class Speaker implements Tag {
                 stringBuilder.append(new Surname(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.SUFFIX)) {
                 stringBuilder.append(new Suffix(childNode).getElement());
+            } else if (Element.INTERNAL_LINKING_ELEMENTS.contains(nodeName)) {
+                stringBuilder.append(new InternalLinkingElements(childNode).getElement());
             }
         }
 

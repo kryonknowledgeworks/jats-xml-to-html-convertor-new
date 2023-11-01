@@ -3,7 +3,7 @@ package org.kjms.xmlparser.tag;
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.tag.group.ContributorNamingElements;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.Address;
+import org.kjms.xmlparser.tag.group.LinkingElement;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -39,9 +39,9 @@ public class Contributor implements Tag {
             } else if (nodeName.equalsIgnoreCase(Element.AUTHOR_COMMENT)) {
                 stringBuilder.append(new AuthorComment(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.BIOGRAPHY)) {
-                stringBuilder.append(new Biography(childNode).getElement());
+                    stringBuilder.append(new Biography(childNode).getElement());
             } else if (Element.LINKING_ELEMENTS.contains(nodeName)) {
-                stringBuilder.append(new ContributorNamingElements(childNode).getElement());
+                stringBuilder.append(new LinkingElement(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ON_BEHALF_OF)) {
                 stringBuilder.append(new OnBehalfOf(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ROLE)) {

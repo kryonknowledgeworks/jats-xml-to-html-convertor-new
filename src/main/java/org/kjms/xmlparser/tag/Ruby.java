@@ -21,8 +21,8 @@ public class Ruby implements Tag {
 
             final String nodeName = childNode.getNodeName();
 
-            if (nodeName.equalsIgnoreCase(Element.RUBY_BASE_TEXT)) {
-                stringBuilder.append(new RubyBaseText(childNode).getElement());
+            if (nodeName.equalsIgnoreCase(Element.RUBY_BASE)) {
+                stringBuilder.append(new RubyBase(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.RUBY_TEXTUAL_ANNOTATION)) {
                 stringBuilder.append(new RubyTextualAnnotation(childNode).getElement());
             }

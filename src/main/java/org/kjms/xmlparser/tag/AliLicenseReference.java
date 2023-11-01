@@ -12,6 +12,6 @@ public class AliLicenseReference implements Tag {
     }
 
     public String getElement() {
-        return TagUtils.addSpanTag(node.getTextContent());
+        return TagUtils.addSpanTag(node.getAttributes().getNamedItem("xmlns:ali").getNodeValue());
     }
 }

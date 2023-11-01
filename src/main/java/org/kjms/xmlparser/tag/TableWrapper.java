@@ -4,8 +4,8 @@ import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.tag.group.AccessibilityElements;
 import org.kjms.xmlparser.tag.group.LinkingElement;
+import org.kjms.xmlparser.tag.group.ListElements;
 import org.kjms.xmlparser.tag.group.OwnershipElements;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.*;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -32,7 +32,7 @@ public class TableWrapper implements Tag {
             } else if (nodeName.equalsIgnoreCase(Element.CAPTION)) {
                 stringBuilder.append(new Caption(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ABSTRACT)) {
-                stringBuilder.append(new ElementAbstract(childNode).getElement());
+                stringBuilder.append(new AbstractElement(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.SUBJECT_GROUP)) {
                 stringBuilder.append(new SubjectGroup(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.KEYWORD_GROUP)) {
@@ -47,9 +47,9 @@ public class TableWrapper implements Tag {
                 stringBuilder.append(new Speech(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.STATEMENT)) {
                 stringBuilder.append(new Statement(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.VERSE_FORM_FOR_POETRY)) {
+            } else if (nodeName.equalsIgnoreCase(Element.VERSE_GROUP)) {
                 stringBuilder.append(new VerseGroup(childNode).getElement());
-            } else if (Element.LIST.contains(nodeName)) {
+            } else if (Element.LIST_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new ListElements(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ALTERNATIVES)) {
                 stringBuilder.append(new Alternatives(childNode).getElement());
@@ -63,7 +63,7 @@ public class TableWrapper implements Tag {
                 stringBuilder.append(new Graphic(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.MEDIA)) {
                 stringBuilder.append(new Media(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.PREFORMATTED_TEXT)) {
+            } else if (nodeName.equalsIgnoreCase(Element.PREFORMAT)) {
                 stringBuilder.append(new Preformat(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.TABLE)) {
                 stringBuilder.append(new Table(childNode).getElement());
@@ -76,6 +76,6 @@ public class TableWrapper implements Tag {
             }
         }
 
-        return TagUtils.addDivTag(node.getTextContent());
+        return TagUtils.addDivTag(stringBuilder.toString());
     }
 }

@@ -2,7 +2,9 @@ package org.kjms.xmlparser.tag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
+import org.kjms.xmlparser.tag.group.ListElements;
 import org.kjms.xmlparser.tag.group.MathElements;
+import org.kjms.xmlparser.tag.group.ParagraphLevelDisplayElements;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -29,7 +31,7 @@ public class Section implements Tag {
             } else if (nodeName.equalsIgnoreCase(Element.TITLE)) {
                 stringBuilder.append(new Title(childNode).getElement());
             } else if (Element.PARAGRAPH_LEVEL_DISPLAY_ELEMENTS.contains(nodeName)) {
-                stringBuilder.append(new Title(childNode).getElement());
+                stringBuilder.append(new ParagraphLevelDisplayElements(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ALTERNATIVES)) {
                 stringBuilder.append(new Alternatives(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.DISPLAY_FORMULA)) {
@@ -52,8 +54,10 @@ public class Section implements Tag {
                 stringBuilder.append(new Speech(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.STATEMENT)) {
                 stringBuilder.append(new Statement(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.VERSE_FORM_FOR_POETRY)) {
+            } else if (nodeName.equalsIgnoreCase(Element.VERSE_GROUP)) {
                 stringBuilder.append(new VerseGroup(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.SECTION)) {
+                stringBuilder.append(new Section(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.FOOTNOTE_GROUP)) {
                 stringBuilder.append(new FootNoteGroup(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.GLOSSARY)) {

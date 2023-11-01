@@ -2,7 +2,6 @@ package org.kjms.xmlparser.tag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.*;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -25,7 +24,7 @@ public class FloatsGroup implements Tag {
 
             if (nodeName.equalsIgnoreCase(Element.ALTERNATIVES)) {
                 stringBuilder.append(new Alternatives(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.BLOCK_LEVEL_ALTERNATIVES)) {
+            } else if (nodeName.equalsIgnoreCase(Element.BLOCK_ALTERNATIVES)) {
                 stringBuilder.append(new BlockAlternatives(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.BOXED_TEXT)) {
                 stringBuilder.append(new BoxedText(childNode).getElement());
@@ -36,14 +35,14 @@ public class FloatsGroup implements Tag {
             } else if (nodeName.equalsIgnoreCase(Element.FIGURE)) {
                 stringBuilder.append(new Figure(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.FIGURE_GROUP)) {
-                stringBuilder.append(new FloatsGroup(childNode).getElement());
+                stringBuilder.append(new FigureGroup(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.GRAPHIC)) {
                 stringBuilder.append(new Graphic(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.MEDIA)) {
                 stringBuilder.append(new Media(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.PREFORMATTED_TEXT)) {
+            } else if (nodeName.equalsIgnoreCase(Element.PREFORMAT)) {
                 stringBuilder.append(new Preformat(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.SUPPLEMENTARY_MATERIAL_METADATA)) {
+            } else if (nodeName.equalsIgnoreCase(Element.SUPPLEMENTARY_MATERIAL)) {
                 stringBuilder.append(new SupplementaryMaterial(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.TABLE_WRAPPER)) {
                 stringBuilder.append(new TableWrapper(childNode).getElement());

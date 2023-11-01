@@ -3,7 +3,6 @@ package org.kjms.xmlparser.tag;
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.tag.group.*;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.*;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -28,7 +27,9 @@ public class DisplayFormula implements Tag {
             } else if (Element.ACCESSIBILITY_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new AccessibilityElements(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ABSTRACT)) {
-                stringBuilder.append(new ElementAbstract(childNode).getElement());
+                stringBuilder.append(new AbstractElement(childNode).getElement());
+            } else if (Element.LINKING_ELEMENTS.contains(nodeName)) {
+                stringBuilder.append(new LinkingElement(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.BREAK)) {
                 stringBuilder.append(new BreakLine(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.CAPTION)) {
@@ -47,10 +48,10 @@ public class DisplayFormula implements Tag {
                 stringBuilder.append(new SubjectGroup(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.LABEL)) {
                 stringBuilder.append(new Label(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.NAMED_SPECIAL_CONTENT)) {
-                stringBuilder.append(new NamedSpecialContent(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.STYLED_SPECIAL_CONTENT)) {
-                stringBuilder.append(new StyledSpecialContent(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.NAMED_CONTENT)) {
+                stringBuilder.append(new NamedContent(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.STYLED_CONTENT)) {
+                stringBuilder.append(new StyledContent(childNode).getElement());
             } else if (Element.MATH_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new MathElements(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ALTERNATIVES)) {
@@ -63,7 +64,7 @@ public class DisplayFormula implements Tag {
                 stringBuilder.append(new Graphic(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.MEDIA)) {
                 stringBuilder.append(new Media(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.PREFORMATTED_TEXT)) {
+            } else if (nodeName.equalsIgnoreCase(Element.PREFORMAT)) {
                 stringBuilder.append(new Preformat(childNode).getElement());
             } else if (Element.BASELINE_CHANGE_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new BaselineChangeElements(childNode).getElement());

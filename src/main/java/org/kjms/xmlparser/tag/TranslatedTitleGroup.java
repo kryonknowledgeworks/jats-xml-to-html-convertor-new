@@ -21,9 +21,9 @@ public class TranslatedTitleGroup implements Tag {
             final String nodeName = childNode.getNodeName();
 
             if (nodeName.equalsIgnoreCase(Element.TRANS_TITLE)) {
-                stringBuilder.append(new TransTitle(childNode).getElement());
+                stringBuilder.append(new TranslatedTitle(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.TRANS_SUBTITLE)) {
-                stringBuilder.append(new TransSubtitle(childNode).getElement());
+                stringBuilder.append(new TranslatedSubTitle(childNode).getElement());
             }
         }
 

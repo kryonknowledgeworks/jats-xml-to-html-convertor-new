@@ -23,7 +23,7 @@ public class SansSerif implements Tag {
             final String nodeName = childNode.getNodeName();
 
             if (nodeName.equalsIgnoreCase(Element.TEXT)) {
-                stringBuilder.append(TagUtils.addSpanTag(node.getTextContent(), "font-family: Arial, Helvetica, sans-serif;"));
+                stringBuilder.append(childNode.getTextContent());
             } else if (Element.RELATED_MATERIAL_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new RelatedMaterialElements(childNode).getElement());
             }else if (Element.LINKING_ELEMENTS.contains(nodeName)) {
@@ -47,6 +47,6 @@ public class SansSerif implements Tag {
             }
         }
 
-        return TagUtils.addDivTag(stringBuilder.toString());
+        return TagUtils.addSpanTag(stringBuilder.toString(), "font-family: Arial, Helvetica, sans-serif;");
     }
 }

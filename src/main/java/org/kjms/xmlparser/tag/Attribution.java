@@ -2,14 +2,7 @@ package org.kjms.xmlparser.tag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.tag.group.BaselineChangeElements;
-import org.kjms.xmlparser.tag.group.EmphasisElements;
-import org.kjms.xmlparser.tag.group.InlineDisplayElements;
-import org.kjms.xmlparser.tag.group.InlineMathElements;
-import org.kjms.xmlparser.tag.group.InternalLinkingElements;
-import org.kjms.xmlparser.tag.group.LinkingElement;
-import org.kjms.xmlparser.tag.group.MathElements;
-import org.kjms.xmlparser.tag.group.OtherInlineElements;
+import org.kjms.xmlparser.tag.group.*;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -30,11 +23,11 @@ public class Attribution implements Tag {
             final String nodeName = childNode.getNodeName();
 
             if (nodeName.equalsIgnoreCase(Element.TEXT)) {
-                stringBuilder.append(TagUtils.addSpanTag(childNode.getTextContent()));
+                stringBuilder.append(childNode.getTextContent());
             } else if (Element.LINKING_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new LinkingElement(childNode).getElement());
             } else if (Element.RELATED_MATERIAL_ELEMENTS.contains(nodeName)) {
-                stringBuilder.append(new LinkingElement(childNode).getElement());
+                stringBuilder.append(new RelatedMaterialElements(childNode).getElement());
             } else if (Element.EMPHASIS_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new EmphasisElements(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ALTERNATIVES)) {
@@ -54,6 +47,6 @@ public class Attribution implements Tag {
             }
         }
 
-        return TagUtils.addBTag(node.getTextContent());
+        return TagUtils.addSpanTag(stringBuilder.toString());
     }
 }

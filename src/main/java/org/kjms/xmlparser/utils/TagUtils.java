@@ -24,6 +24,10 @@ public interface TagUtils {
         return "<div> " + data + " </div>";
     }
 
+    static String addAddressTag(String data) {
+        return "<address> " + data + " </address>";
+    }
+
     static String addDivTag(String data, String id) {
         return "<div id=" + id + "> " + data + " </div>";
     }
@@ -74,9 +78,11 @@ public interface TagUtils {
     static String addSpanTag(String data) {
         return "<span> " + data + " </span>";
     }
+
     static String addTableTag(String data) {
         return "<table> " + data + " </table>";
     }
+
     static String addSpanAndClassTag(String data, String clazz) {
         return "<span class=" + clazz + " > " + data + " </span>";
     }

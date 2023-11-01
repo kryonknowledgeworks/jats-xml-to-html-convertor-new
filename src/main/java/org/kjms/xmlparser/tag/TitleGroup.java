@@ -34,6 +34,6 @@ public class TitleGroup implements Tag {
             }
         }
 
-        return TagUtils.addH1Tag(stringBuilder.toString());
+        return TagUtils.addDivTag(stringBuilder.toString());
     }
 }

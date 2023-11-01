@@ -27,10 +27,10 @@ public class OtherInlineElements implements Tag {
             stringBuilder.append(new MilestoneEnd(node).getElement());
         } else if (nodeName.equalsIgnoreCase(Element.MILESTONE_START)) {
             stringBuilder.append(new MilestoneStart(node).getElement());
-        } else if (nodeName.equalsIgnoreCase(Element.NAMED_SPECIAL_CONTENT)) {
-            stringBuilder.append(new NamedSpecialContent(node).getElement());
-        } else if (nodeName.equalsIgnoreCase(Element.STYLED_SPECIAL_CONTENT)) {
-            stringBuilder.append(new StyledSpecialContent(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.NAMED_CONTENT)) {
+            stringBuilder.append(new NamedContent(node).getElement());
+        } else if (nodeName.equalsIgnoreCase(Element.STYLED_CONTENT)) {
+            stringBuilder.append(new StyledContent(node).getElement());
         }
 
         return stringBuilder.toString();

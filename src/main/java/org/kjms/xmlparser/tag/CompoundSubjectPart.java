@@ -32,16 +32,15 @@ public class CompoundSubjectPart implements Tag {
                 stringBuilder.append(new InlineDisplayElements(childNode).getElement());
             } else if (Element.INLINE_MATH_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new InlineMathElements(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.NAMED_SPECIAL_CONTENT)) {
-                stringBuilder.append(new NamedSpecialContent(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.STYLED_SPECIAL_CONTENT)) {
-                stringBuilder.append(new StyledSpecialContent(childNode).getElement());
-            } else if (Element.INTERNAL_LINKING_ELEMENTS.contains(nodeName)) {
-                stringBuilder.append(new InternalLinkingElements(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.NAMED_CONTENT)) {
+                stringBuilder.append(new NamedContent(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.STYLED_CONTENT)) {
+                stringBuilder.append(new StyledContent(childNode).getElement());
             } else if (Element.BASELINE_CHANGE_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new BaselineChangeElements(childNode).getElement());
             }
         }
+
         return TagUtils.addDivTag(stringBuilder.toString());
     }
 }

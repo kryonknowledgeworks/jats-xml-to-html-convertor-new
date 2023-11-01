@@ -4,7 +4,6 @@ import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.tag.group.InlineDisplayElements;
 import org.kjms.xmlparser.tag.group.MathElements;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.*;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -40,9 +39,9 @@ public class Alternatives implements Tag {
                 stringBuilder.append(new InlineSupplementaryMaterial(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.MEDIA)) {
                 stringBuilder.append(new Media(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.PREFORMATTED_TEXT)) {
+            } else if (nodeName.equalsIgnoreCase(Element.PREFORMAT)) {
                 stringBuilder.append(new Preformat(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.SUPPLEMENTARY_MATERIAL_METADATA)) {
+            } else if (nodeName.equalsIgnoreCase(Element.SUPPLEMENTARY_MATERIAL)) {
                 stringBuilder.append(new SupplementaryMaterial(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.TABLE)) {
                 stringBuilder.append(new Table(childNode).getElement());

@@ -3,7 +3,6 @@ package org.kjms.xmlparser.tag;
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.tag.group.*;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.*;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -51,9 +50,9 @@ public class TableData implements Tag {
                 stringBuilder.append(new Speech(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.STATEMENT)) {
                 stringBuilder.append(new Statement(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.VERSE_FORM_FOR_POETRY)) {
+            } else if (nodeName.equalsIgnoreCase(Element.VERSE_GROUP)) {
                 stringBuilder.append(new VerseGroup(childNode).getElement());
-            } else if (Element.LIST.contains(nodeName)) {
+            } else if (Element.LIST_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new ListElements(childNode).getElement());
             } else if (Element.MATH_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new MathElements(childNode).getElement());
@@ -71,7 +70,7 @@ public class TableData implements Tag {
                 stringBuilder.append(new Code(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.MEDIA)) {
                 stringBuilder.append(new Media(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.PREFORMATTED_TEXT)) {
+            } else if (nodeName.equalsIgnoreCase(Element.PREFORMAT)) {
                 stringBuilder.append(new Preformat(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ANSWER)) {
                 stringBuilder.append(new Answer(childNode).getElement());

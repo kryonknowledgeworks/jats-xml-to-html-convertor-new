@@ -23,19 +23,20 @@ public class RelatedObject implements Tag {
             Node childNode = node.getChildNodes().item(i);
 
             final String nodeName = childNode.getNodeName();
+
             if (nodeName.equalsIgnoreCase(Element.TEXT)) {
                 stringBuilder.append(TagUtils.addSpanTag(childNode.getTextContent()));
             } else if (Element.EMPHASIS_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new EmphasisElements(childNode).getElement());
-            }else if (nodeName.equalsIgnoreCase(Element.JOURNAL_ID)) {
-                stringBuilder.append(new JournalId(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.NAMED_SPECIAL_CONTENT)) {
-                stringBuilder.append(new NamedSpecialContent(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.NAMED_CONTENT)) {
+                stringBuilder.append(new NamedContent(childNode).getElement());
+            }  else if (nodeName.equalsIgnoreCase(Element.STYLED_CONTENT)) {
+                stringBuilder.append(new StyledContent(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ANNOTATION)) {
                 stringBuilder.append(new Annotation(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ARTICLE_TITLE)) {
                 stringBuilder.append(new ArticleTitle(childNode).getElement());
-            }else if (nodeName.equalsIgnoreCase(Element.CHAPTER_TITLE)) {
+            } else if (nodeName.equalsIgnoreCase(Element.CHAPTER_TITLE)) {
                 stringBuilder.append(new ChapterTitle(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.COLLABORATIVE)) {
                 stringBuilder.append(new Collaborative(childNode).getElement());
@@ -134,9 +135,9 @@ public class RelatedObject implements Tag {
             } else if (nodeName.equalsIgnoreCase(Element.SUPPLEMENT)) {
                 stringBuilder.append(new Supplement(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.TRANS_SOURCE)) {
-                stringBuilder.append(new TransSource(childNode).getElement());
+                stringBuilder.append(new TranslatedSource(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.TRANS_TITLE)) {
-                stringBuilder.append(new TransTitle(childNode).getElement());
+                stringBuilder.append(new TranslatedTitle(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.VERSION)) {
                 stringBuilder.append(new Version(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.VOLUME)) {
@@ -153,4 +154,5 @@ public class RelatedObject implements Tag {
         }
 
         return TagUtils.addDivTag(stringBuilder.toString());
-    }}
+    }
+}

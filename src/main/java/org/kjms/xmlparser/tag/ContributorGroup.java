@@ -28,7 +28,9 @@ public class ContributorGroup implements Tag {
                 stringBuilder.append(new Contributor(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.AFFILIATION)) {
                 stringBuilder.append(new Affiliation(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.AUTHOR_COMMENT)) {
+            } else if (nodeName.equalsIgnoreCase(Element.AFFILIATION_ALTERNATIVES)) {
+                stringBuilder.append(new AffiliationAlternatives(childNode).getElement());
+            }  else if (nodeName.equalsIgnoreCase(Element.AUTHOR_COMMENT)) {
                 stringBuilder.append(new AuthorComment(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.BIOGRAPHY)) {
                 stringBuilder.append(new Biography(childNode).getElement());

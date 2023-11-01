@@ -26,6 +26,6 @@ public class AffiliationAlternatives implements Tag {
             }
         }
 
-        return TagUtils.addSpanTag(stringBuilder.toString());
+        return TagUtils.addDivTag(stringBuilder.toString());
     }
 }

@@ -4,11 +4,8 @@ import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.tag.group.AccessibilityElements;
 import org.kjms.xmlparser.tag.group.LinkingElement;
+import org.kjms.xmlparser.tag.group.ListElements;
 import org.kjms.xmlparser.tag.group.OwnershipElements;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.ArrayElement;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.ChemicalStructureWrapper;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.Code;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.Graphic;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -35,7 +32,7 @@ public class SupplementaryMaterial implements Tag {
             } else if (nodeName.equalsIgnoreCase(Element.CAPTION)) {
                 stringBuilder.append(new Caption(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ABSTRACT)) {
-                stringBuilder.append(new ElementAbstract(childNode).getElement());
+                stringBuilder.append(new AbstractElement(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.KEYWORD_GROUP)) {
                 stringBuilder.append(new KeywordGroup(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.SUBJECT_GROUP)) {
@@ -56,12 +53,14 @@ public class SupplementaryMaterial implements Tag {
                 stringBuilder.append(new Speech(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.STATEMENT)) {
                 stringBuilder.append(new Statement(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.VERSE_FORM_FOR_POETRY)) {
+            } else if (nodeName.equalsIgnoreCase(Element.VERSE_GROUP)) {
                 stringBuilder.append(new VerseGroup(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.TABLE_WRAPPER)) {
                 stringBuilder.append(new TableWrapper(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.PARAGRAPH)) {
                 stringBuilder.append(new Paragraph(childNode).getElement());
+            } else if (Element.LIST_ELEMENTS.contains(nodeName)) {
+                stringBuilder.append(new ListElements(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ALTERNATIVES)) {
                 stringBuilder.append(new Alternatives(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ARRAY)) {
@@ -71,11 +70,11 @@ public class SupplementaryMaterial implements Tag {
             } else if (nodeName.equalsIgnoreCase(Element.GRAPHIC)) {
                 stringBuilder.append(new Graphic(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.MEDIA)) {
-                stringBuilder.append(new Graphic(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.PREFORMATTED_TEXT)) {
-                stringBuilder.append(new Graphic(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.XREF)) {
-                stringBuilder.append(new Graphic(childNode).getElement());
+                stringBuilder.append(new Media(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.PREFORMAT)) {
+                stringBuilder.append(new Preformat(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.CROSS_REFERENCE)) {
+                stringBuilder.append(new Xref(childNode).getElement());
             } else if (Element.OWNERSHIP_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new OwnershipElements(childNode).getElement());
             }

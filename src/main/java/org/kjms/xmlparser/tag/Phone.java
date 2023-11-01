@@ -1,6 +1,6 @@
 package org.kjms.xmlparser.tag;
 
-import org.kjms.xmlparser.Element;
+
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
@@ -13,11 +13,6 @@ public class Phone implements Tag {
     }
 
     public String getElement() {
-
-        if (node.getChildNodes().getLength() > 0 && node.getNodeName().equals(Element.TEXT)) {
-            return TagUtils.addSpanTag(node.getTextContent());
-        }
-
-        return "";
+        return TagUtils.addSpanTag(node.getTextContent());
     }
 }

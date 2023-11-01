@@ -80,7 +80,7 @@ public class ArticleMeta implements Tag {
                 stringBuilder.append(new LinkingElement(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.PRODUCT)) {
                 stringBuilder.append(new Product(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.SUPPLEMENTARY_MATERIAL_METADATA)) {
+            } else if (nodeName.equalsIgnoreCase(Element.SUPPLEMENTARY_MATERIAL)) {
                 stringBuilder.append(new SupplementaryMaterial(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.HISTORY)) {
                 stringBuilder.append(new History(childNode).getElement());
@@ -95,9 +95,9 @@ public class ArticleMeta implements Tag {
             } else if (nodeName.equalsIgnoreCase(Element.RELATED_OBJECT)) {
                 stringBuilder.append(new RelatedObject(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ABSTRACT)) {
-                stringBuilder.append(new ElementAbstract(childNode).getElement());
+                stringBuilder.append(new AbstractElement(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.TRANS_ABSTRACT)) {
-                stringBuilder.append(new TransAbstract(childNode).getElement());
+                stringBuilder.append(new TranslatedAbstract(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.KEYWORD_GROUP)) {
                 stringBuilder.append(new KeywordGroup(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.FUNDING_GROUP)) {

@@ -4,8 +4,6 @@ import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.tag.group.BaselineChangeElements;
 import org.kjms.xmlparser.tag.group.EmphasisElements;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.Graphic;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.Media;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -31,10 +29,10 @@ public class Signature implements Tag {
                 stringBuilder.append(new EmphasisElements(childNode).getElement());
             } else if (Element.BASELINE_CHANGE_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new BaselineChangeElements(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.NAMED_SPECIAL_CONTENT)) {
-                stringBuilder.append(new NamedSpecialContent(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.STYLED_SPECIAL_CONTENT)) {
-                stringBuilder.append(new StyledSpecialContent(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.NAMED_CONTENT)) {
+                stringBuilder.append(new NamedContent(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.STYLED_CONTENT)) {
+                stringBuilder.append(new StyledContent(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.BREAK)) {
                 stringBuilder.append(new BreakLine(childNode).getElement());
             } else if (Element.INLINE_DISPLAY_ELEMENTS.contains(nodeName)) {

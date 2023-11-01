@@ -13,11 +13,6 @@ public class PostalCode implements Tag {
     }
 
     public String getElement() {
-
-        if (node.getChildNodes().getLength() > 0 && node.getNodeName().equals(Element.TEXT)) {
-            return TagUtils.addSpanTag(node.getTextContent());
-        }
-
-        return "";
+        return TagUtils.addSpanTag(node.getTextContent());
     }
 }

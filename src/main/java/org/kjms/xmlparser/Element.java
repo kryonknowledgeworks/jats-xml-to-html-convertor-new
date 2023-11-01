@@ -31,14 +31,13 @@ public final class Element {
     public static final String DISPLAY_FORMULA = "disp-formula";
     public static final String DISPLAY_FORMULA_GROUP = "disp-formula-group";
     public static final String NAME = "name";
-    public static final String XREF = "xref";
     public static final String AFFILIATION = "aff";
     public static final String AFFILIATION_ALTERNATIVES = "aff-alternatives";
     public static final String ET_AL = "etal";
     public static final String ROLE = "role";
     public static final String LABEL = "label";
-    public static final String NAMED_SPECIAL_CONTENT = "named-content";
-    public static final String STYLED_SPECIAL_CONTENT = "styled-content";
+    public static final String NAMED_CONTENT = "named-content";
+    public static final String STYLED_CONTENT = "styled-content";
 
     public static final String TEXT = "#text";
     public static final String AUTHOR_NOTES = "author-notes";
@@ -57,8 +56,8 @@ public final class Element {
     public static final String SPEAKER = "speaker";
     public static final String STATEMENT = "statement";
     public static final String VERSION = "version";
-    public static final String VERSE_FORM_FOR_POETRY = "verse-group";
-    public static final String LINE_OF_VERSE = "verse-line";
+    public static final String VERSE_GROUP = "verse-group";
+    public static final String VERSE_LINE = "verse-line";
     public static final String ALTERNATE_TEXT = "alt-text";
     public static final String TEXTUAL_FORM = "textual-form";
     public static final String ALTERNATE_TITLE = "alt-title";
@@ -113,21 +112,22 @@ public final class Element {
     public static final String BOLD = "bold";
     public static final String FIXED_CASE = "fixed-case";
     public static final String ITALIC = "italic";
-    public static final String MONOSPACE_TEXT = "monospace";
+    public static final String MONOSPACE = "monospace";
     public static final String OVERLINE = "overline";
     public static final String ROMAN = "roman";
     public static final String SMALL_CAPS = "sc";
     public static final String STRIKE = "strike";
     public static final String UNDERLINE = "underline";
     public static final String RUBY = "ruby";
-    public static final String RUBY_BASE_TEXT = "rb";
+    public static final String RUBY_BASE = "rb";
     public static final String RUBY_TEXTUAL_ANNOTATION = "rt";
     public static final String ANNOTATION = "annotation";
     public static final String ADDRESS = "address";
     public static final String ANSWER = "answer";
     public static final String ANSWER_SET = "answer-set";
     public static final String ARRAY = "array";
-    public static final String BLOCK_LEVEL_ALTERNATIVES = "block-alternatives";
+    public static final String ACCESS_DATE = "access-date";
+    public static final String BLOCK_ALTERNATIVES = "block-alternatives";
     public static final String BOXED_TEXT = "boxed-text";
     public static final String CHEMICAL_STRUCTURE_WRAPPER = "chem-struct-wrap";
     public static final String CODE = "code";
@@ -144,12 +144,12 @@ public final class Element {
     public static final String FIGURE_GROUP = "fig-group";
     public static final String GRAPHIC = "graphic";
     public static final String MEDIA = "media";
-    public static final String PREFORMATTED_TEXT = "preformat";
+    public static final String PREFORMAT = "preformat";
     public static final String QUESTION = "question";
     public static final String QUESTION_WRAPPER = "question-wrap";
     public static final String QUESTION_PREAMBLE = "question-preamble";
     public static final String QUESTION_WRAPPER_GROUP = "question-wrap-group";
-    public static final String SUPPLEMENTARY_MATERIAL_METADATA = "supplementary-material";
+    public static final String SUPPLEMENTARY_MATERIAL = "supplementary-material";
     public static final String TABLE_WRAPPER = "table-wrap";
     public static final String TABLE_WRAPPER_GROUP = "table-wrap-group";
     public static final String TABLE_WRAPPER_FOOT = "table-wrap-foot";
@@ -200,9 +200,10 @@ public final class Element {
     public static final String ALTERNATIVES = "alternatives";
     public static final String SUPPORT_GROUP = "support-group";
     public static final String RESOURCE_GROUP = "resource-group";
+    public static final String RESOURCE_ID = "resource-id";
     public static final String RESOURCE_NAME = "resource-name";
     public static final String RESPONSE = "response";
-    public static final String RESOURCE_WRAP = "resource-wrap";
+    public static final String RESOURCE_WRAPPER = "resource-wrap";
     public static final String SUPPORT_DESCRIPTION = "support-description";
     public static final String FUNDING_GROUP = "funding-group";
     public static final String FUNDING_SOURCE = "funding-source";
@@ -220,6 +221,7 @@ public final class Element {
     public static final String PRINCIPAL_INVESTIGATOR = "principal-investigator";
     public static final String FUNDING_STATEMENT = "funding-statement";
     public static final String OPEN_ACCESS = "open-access";
+    public static final String OPTION = "option";
     public static final String BREAK = "break";
     public static final String ALI_FREE_TO_READ = "ali:free_to_read";
     public static final String ALI_LICENSE_REFERENCE = "ali:license_ref";
@@ -235,6 +237,8 @@ public final class Element {
     public static final String CONFERENCE_SPONSOR = "conf-sponsor";
     public static final String DATA_TITLE = "data-title";
     public static final String EDITION = "edition";
+    public static final String EVENT = "event";
+    public static final String EVENT_DESCRIPTION = "event-desc";
     public static final String ELOCATION_ID = "elocation-id";
     public static final String GOVERNMENT = "gov";
     public static final String ISBN = "isbn";
@@ -286,6 +290,7 @@ public final class Element {
     public static final String COLLABORATIVE_ALTERNATIVES = "collab-alternatives";
     public static final String NAME_ALTERNATIVES = "name-alternatives";
     public static final String LIST = "list";
+    public static final String LIST_ITEM = "list-item";
     public static final String DEFINITION_LIST = "def-list";
     public static final String VOLUME_ID = "volume-id";
     public static final String VOLUME_SERIES = "volume-series";
@@ -308,15 +313,15 @@ public final class Element {
     public static final Set<String> INTERNAL_LINKING_ELEMENTS = Set.of(FOOTNOTE, TARGET, CROSS_REFERENCE);
     public static final Set<String> RELATED_MATERIAL_ELEMENTS = Set.of(INLINE_SUPPLEMENTARY_MATERIAL, RELATED_ARTICLE, RELATED_OBJECT);
     public static final Set<String> LINKING_ELEMENTS = Set.of(EMAIL, EXT_LINK, URI);
-    public static final Set<String> OTHER_INLINE_ELEMENTS = Set.of(ABBREVIATION, INDEX_TERM, INDEX_TERM_RANGE_END, MILESTONE_END, MILESTONE_START, NAMED_SPECIAL_CONTENT, STYLED_SPECIAL_CONTENT);
+    public static final Set<String> OTHER_INLINE_ELEMENTS = Set.of(ABBREVIATION, INDEX_TERM, INDEX_TERM_RANGE_END, MILESTONE_END, MILESTONE_START, NAMED_CONTENT, STYLED_CONTENT);
     public static final Set<String> INLINE_DISPLAY_ELEMENTS = Set.of(INLINE_GRAPHIC, INLINE_MEDIA_OBJECT, PRIVATE_CHARACTER);
     public static final Set<String> INLINE_MATH_ELEMENTS = Set.of(CHEMICAL_STRUCTURE, INLINE_FORMULA);
     public static final Set<String> BASELINE_CHANGE_ELEMENTS = Set.of(SUBSCRIPT, SUPERSCRIPT);
     public static final Set<String> MATH_ELEMENTS = Set.of(TEX_MATH_EQUATION, MATH);
     public static final Set<String> ADDRESS_ELEMENTS = Set.of(ADDRESS_LINE, CITY, COUNTRY, INSTITUTION, INSTITUTION_WRAPPER, PHONE, POSTAL_CODE, STATE);
-    public static final Set<String> PARAGRAPH_LEVEL_DISPLAY_ELEMENTS = Set.of(ADDRESS, ANSWER, ANSWER_SET, ARRAY, BLOCK_LEVEL_ALTERNATIVES, BOXED_TEXT, CHEMICAL_STRUCTURE_WRAPPER,
-            CODE, EXPLANATION, FIGURE, FIGURE_GROUP, GRAPHIC, MEDIA, PREFORMATTED_TEXT, QUESTION, QUESTION_WRAPPER, QUESTION_WRAPPER_GROUP
-            , SUPPLEMENTARY_MATERIAL_METADATA, TABLE_WRAPPER, TABLE_WRAPPER_GROUP);
+    public static final Set<String> PARAGRAPH_LEVEL_DISPLAY_ELEMENTS = Set.of(ADDRESS, ANSWER, ANSWER_SET, ARRAY, BLOCK_ALTERNATIVES, BOXED_TEXT, CHEMICAL_STRUCTURE_WRAPPER,
+            CODE, EXPLANATION, FIGURE, FIGURE_GROUP, GRAPHIC, MEDIA, PREFORMAT, QUESTION, QUESTION_WRAPPER, QUESTION_WRAPPER_GROUP
+            , SUPPLEMENTARY_MATERIAL, TABLE_WRAPPER, TABLE_WRAPPER_GROUP);
 
-    public static final Set<String> EMPHASIS_ELEMENTS = Set.of(BOLD, FIXED_CASE, ITALIC, MONOSPACE_TEXT, OVERLINE, ROMAN, SANS_SERIF, SMALL_CAPS, STRIKE, UNDERLINE, RUBY);
+    public static final Set<String> EMPHASIS_ELEMENTS = Set.of(BOLD, FIXED_CASE, ITALIC, MONOSPACE, OVERLINE, ROMAN, SANS_SERIF, SMALL_CAPS, STRIKE, UNDERLINE, RUBY);
 }

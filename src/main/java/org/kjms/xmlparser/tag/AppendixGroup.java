@@ -2,6 +2,7 @@ package org.kjms.xmlparser.tag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
+import org.kjms.xmlparser.tag.group.ListElements;
 import org.kjms.xmlparser.tag.group.MathElements;
 import org.kjms.xmlparser.tag.group.ParagraphLevelDisplayElements;
 import org.kjms.xmlparser.utils.TagUtils;
@@ -30,7 +31,7 @@ public class AppendixGroup implements Tag {
             } else if (nodeName.equalsIgnoreCase(Element.TITLE)) {
                 stringBuilder.append(new Title(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ABSTRACT)) {
-                stringBuilder.append(new ElementAbstract(childNode).getElement());
+                stringBuilder.append(new AbstractElement(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.KEYWORD_GROUP)) {
                 stringBuilder.append(new KeywordGroup(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.SUBJECT_GROUP)) {
@@ -43,7 +44,7 @@ public class AppendixGroup implements Tag {
                 stringBuilder.append(new DisplayFormula(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.DISPLAY_FORMULA_GROUP)) {
                 stringBuilder.append(new DisplayFormulaGroup(childNode).getElement());
-            } else if (Element.LIST.contains(nodeName)) {
+            } else if (Element.LIST_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new ListElements(childNode).getElement());
             } else if (Element.MATH_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new MathElements(childNode).getElement());
@@ -59,7 +60,7 @@ public class AppendixGroup implements Tag {
                 stringBuilder.append(new Speech(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.STATEMENT)) {
                 stringBuilder.append(new Statement(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.VERSE_FORM_FOR_POETRY)) {
+            } else if (nodeName.equalsIgnoreCase(Element.VERSE_GROUP)) {
                 stringBuilder.append(new VerseGroup(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.APPENDIX)) {
                 stringBuilder.append(new Appendix(childNode).getElement());

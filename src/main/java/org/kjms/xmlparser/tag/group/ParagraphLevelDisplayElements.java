@@ -2,7 +2,7 @@ package org.kjms.xmlparser.tag.group;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.*;
+import org.kjms.xmlparser.tag.*;
 import org.w3c.dom.Node;
 
 public class ParagraphLevelDisplayElements implements Tag {
@@ -25,7 +25,7 @@ public class ParagraphLevelDisplayElements implements Tag {
             stringBuilder.append(new AnswerSet(node).getElement());
         } else if (nodeName.equalsIgnoreCase(Element.ARRAY)) {
             stringBuilder.append(new ArrayElement(node).getElement());
-        } else if (nodeName.equalsIgnoreCase(Element.BLOCK_LEVEL_ALTERNATIVES)) {
+        } else if (nodeName.equalsIgnoreCase(Element.BLOCK_ALTERNATIVES)) {
             stringBuilder.append(new BlockAlternatives(node).getElement());
         } else if (nodeName.equalsIgnoreCase(Element.BOXED_TEXT)) {
             stringBuilder.append(new BoxedText(node).getElement());
@@ -43,7 +43,7 @@ public class ParagraphLevelDisplayElements implements Tag {
             stringBuilder.append(new Graphic(node).getElement());
         } else if (nodeName.equalsIgnoreCase(Element.MEDIA)) {
             stringBuilder.append(new Media(node).getElement());
-        } else if (nodeName.equalsIgnoreCase(Element.PREFORMATTED_TEXT)) {
+        } else if (nodeName.equalsIgnoreCase(Element.PREFORMAT)) {
             stringBuilder.append(new Preformat(node).getElement());
         } else if (nodeName.equalsIgnoreCase(Element.QUESTION)) {
             stringBuilder.append(new Question(node).getElement());
@@ -51,7 +51,7 @@ public class ParagraphLevelDisplayElements implements Tag {
             stringBuilder.append(new QuestionWrapper(node).getElement());
         } else if (nodeName.equalsIgnoreCase(Element.QUESTION_WRAPPER_GROUP)) {
             stringBuilder.append(new QuestionWrapperGroup(node).getElement());
-        } else if (nodeName.equalsIgnoreCase(Element.SUPPLEMENTARY_MATERIAL_METADATA)) {
+        } else if (nodeName.equalsIgnoreCase(Element.SUPPLEMENTARY_MATERIAL)) {
             stringBuilder.append(new SupplementaryMaterial(node).getElement());
         } else if (nodeName.equalsIgnoreCase(Element.TABLE_WRAPPER)) {
             stringBuilder.append(new TableWrapper(node).getElement());

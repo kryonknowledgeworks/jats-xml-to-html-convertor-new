@@ -27,6 +27,6 @@ public class TFoot implements Tag {
             }
         }
 
-        return TagUtils.addTHeadTag(stringBuilder.toString());
+        return TagUtils.addTFootTag(stringBuilder.toString());
     }
 }

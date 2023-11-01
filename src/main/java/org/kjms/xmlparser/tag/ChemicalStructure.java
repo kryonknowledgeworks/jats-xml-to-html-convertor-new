@@ -3,10 +3,6 @@ package org.kjms.xmlparser.tag;
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
 import org.kjms.xmlparser.tag.group.*;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.ArrayElement;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.Code;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.Media;
-import org.kjms.xmlparser.tag.paragraphleveldisplayelements.Preformat;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -39,30 +35,30 @@ public class ChemicalStructure implements Tag {
                 stringBuilder.append(new EmphasisElements(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.LABEL)) {
                 stringBuilder.append(new Label(childNode).getElement());
-            } else if (Element.LIST.contains(nodeName)) {
+            } else if (Element.LIST_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new ListElements(childNode).getElement());
             } else if (Element.MATH_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new MathElements(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.NAMED_SPECIAL_CONTENT)) {
-                stringBuilder.append(new NamedSpecialContent(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.STYLED_SPECIAL_CONTENT)) {
-                stringBuilder.append(new StyledSpecialContent(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.NAMED_CONTENT)) {
+                stringBuilder.append(new NamedContent(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.STYLED_CONTENT)) {
+                stringBuilder.append(new StyledContent(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ALTERNATIVES)) {
                 stringBuilder.append(new Alternatives(childNode).getElement());
-            } else if (Element.INTERNAL_LINKING_ELEMENTS.contains(nodeName)) {
-                stringBuilder.append(new InternalLinkingElements(childNode).getElement());
-            } else if (Element.BASELINE_CHANGE_ELEMENTS.contains(nodeName)) {
-                stringBuilder.append(new BaselineChangeElements(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ARRAY)) {
                 stringBuilder.append(new ArrayElement(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.CODE)) {
                 stringBuilder.append(new Code(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.GRAPHIC)) {
-                stringBuilder.append(new Code(childNode).getElement());
+                stringBuilder.append(new Graphic(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.MEDIA)) {
                 stringBuilder.append(new Media(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.PREFORMATTED_TEXT)) {
+            } else if (nodeName.equalsIgnoreCase(Element.PREFORMAT)) {
                 stringBuilder.append(new Preformat(childNode).getElement());
+            } else if (Element.INTERNAL_LINKING_ELEMENTS.contains(nodeName)) {
+                stringBuilder.append(new InternalLinkingElements(childNode).getElement());
+            } else if (Element.BASELINE_CHANGE_ELEMENTS.contains(nodeName)) {
+                stringBuilder.append(new BaselineChangeElements(childNode).getElement());
             }
         }
 

@@ -51,7 +51,7 @@ public class Paragraph implements Tag {
                 stringBuilder.append(new InlineMathElements(childNode).getElement());
             } else if (Element.INLINE_DISPLAY_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new InlineDisplayElements(childNode).getElement());
-            } else if (Element.LIST.contains(nodeName)) {
+            } else if (Element.LIST_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new ListElements(childNode).getElement());
             } else if (Element.MATH_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new MathElements(childNode).getElement());
@@ -63,7 +63,7 @@ public class Paragraph implements Tag {
                 stringBuilder.append(new Speech(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.STATEMENT)) {
                 stringBuilder.append(new Statement(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.VERSE_FORM_FOR_POETRY)) {
+            } else if (nodeName.equalsIgnoreCase(Element.VERSE_GROUP)) {
                 stringBuilder.append(new VerseGroup(childNode).getElement());
             } else if (Element.INTERNAL_LINKING_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new InternalLinkingElements(childNode).getElement());

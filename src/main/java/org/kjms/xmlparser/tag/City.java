@@ -14,10 +14,19 @@ public class City implements Tag {
 
     public String getElement() {
 
-        if (node.getChildNodes().getLength() > 0 && node.getNodeName().equals(Element.TEXT)) {
-            return TagUtils.addSpanTag(node.getTextContent());
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i < node.getChildNodes().getLength(); i++) {
+
+            Node childNode = node.getChildNodes().item(i);
+
+            final String nodeName = childNode.getNodeName();
+
+            if (nodeName.equalsIgnoreCase(Element.TEXT)) {
+                stringBuilder.append(TagUtils.addSpanTag(childNode.getTextContent()));
+            }
         }
 
-        return "";
+        return stringBuilder.toString();
     }
 }

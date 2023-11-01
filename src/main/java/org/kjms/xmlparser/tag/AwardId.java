@@ -23,7 +23,7 @@ public class AwardId implements Tag {
             final String nodeName = childNode.getNodeName();
 
             if (nodeName.equalsIgnoreCase(Element.TEXT)) {
-                stringBuilder.append(TagUtils.addSpanTag(childNode.getTextContent()));
+                stringBuilder.append(childNode.getTextContent());
             } else if (Element.EMPHASIS_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new EmphasisElements(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ALTERNATIVES)) {
@@ -39,6 +39,6 @@ public class AwardId implements Tag {
             }
         }
 
-        return TagUtils.addDivTag(stringBuilder.toString());
+        return TagUtils.addSpanTag(stringBuilder.toString());
     }
 }

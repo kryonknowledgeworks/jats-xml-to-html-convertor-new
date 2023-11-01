@@ -2,10 +2,7 @@ package org.kjms.xmlparser.tag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
-import org.kjms.xmlparser.tag.group.BaselineChangeElements;
-import org.kjms.xmlparser.tag.group.EmphasisElements;
-import org.kjms.xmlparser.tag.group.InlineDisplayElements;
-import org.kjms.xmlparser.tag.group.InlineMathElements;
+import org.kjms.xmlparser.tag.group.*;
 import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
@@ -37,7 +34,7 @@ public class Collaborative implements Tag {
             } else if (Element.INLINE_MATH_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new InlineMathElements(childNode).getElement());
             } else if (Element.OTHER_INLINE_ELEMENTS.contains(nodeName)) {
-                stringBuilder.append(new InlineMathElements(childNode).getElement());
+                stringBuilder.append(new OtherInlineElements(childNode).getElement());
             } else if (Element.BASELINE_CHANGE_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new BaselineChangeElements(childNode).getElement());
             }

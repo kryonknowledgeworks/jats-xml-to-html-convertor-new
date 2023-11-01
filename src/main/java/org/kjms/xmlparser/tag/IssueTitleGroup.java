@@ -2,6 +2,7 @@ package org.kjms.xmlparser.tag;
 
 import org.kjms.xmlparser.Element;
 import org.kjms.xmlparser.Tag;
+import org.kjms.xmlparser.utils.TagUtils;
 import org.w3c.dom.Node;
 
 public class IssueTitleGroup implements Tag {
@@ -29,6 +30,6 @@ public class IssueTitleGroup implements Tag {
             }
         }
 
-        return stringBuilder.toString();
+        return TagUtils.addSpanTag(stringBuilder.toString());
     }
 }

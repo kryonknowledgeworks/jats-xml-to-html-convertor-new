@@ -28,7 +28,7 @@ public class Acknowledgments implements Tag {
             } else if (nodeName.equalsIgnoreCase(Element.TITLE)) {
                 stringBuilder.append(new Title(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.ABSTRACT)) {
-                stringBuilder.append(new ElementAbstract(childNode).getElement());
+                stringBuilder.append(new AbstractElement(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.KEYWORD_GROUP)) {
                 stringBuilder.append(new KeywordGroup(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.SUPPORT_GROUP)) {

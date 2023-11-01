@@ -23,7 +23,7 @@ public class ResourceGroup implements Tag {
 
             if (nodeName.equalsIgnoreCase(Element.RESOURCE_NAME)) {
                 stringBuilder.append(new ResourceName(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.RESOURCE_WRAP)) {
+            } else if (nodeName.equalsIgnoreCase(Element.RESOURCE_WRAPPER)) {
                 stringBuilder.append(new ResourceWrapper(childNode).getElement());
             }
         }

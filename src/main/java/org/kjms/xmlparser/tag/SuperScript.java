@@ -24,7 +24,7 @@ public class SuperScript implements Tag {
             final String nodeName = childNode.getNodeName();
 
             if (nodeName.equalsIgnoreCase(Element.TEXT)) {
-                stringBuilder.append(TagUtils.addSupTag(childNode.getTextContent()));
+                stringBuilder.append(childNode.getTextContent());
             } else if (Element.LINKING_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new LinkingElement(childNode).getElement());
             } else if (Element.RELATED_MATERIAL_ELEMENTS.contains(nodeName)) {
@@ -48,6 +48,6 @@ public class SuperScript implements Tag {
             }
         }
 
-        return TagUtils.addDivTag(stringBuilder.toString());
+        return TagUtils.addSupTag(stringBuilder.toString());
     }
 }

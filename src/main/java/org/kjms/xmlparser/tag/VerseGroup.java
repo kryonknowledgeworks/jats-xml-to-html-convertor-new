@@ -27,8 +27,12 @@ public class VerseGroup implements Tag {
                 stringBuilder.append(new Label(childNode).getElement());
             } else if (nodeName.equalsIgnoreCase(Element.TITLE)) {
                 stringBuilder.append(new Title(childNode).getElement());
-            } else if (nodeName.equalsIgnoreCase(Element.LINE_OF_VERSE)) {
+            } else if (nodeName.equalsIgnoreCase(Element.SUBTITLE)) {
+                stringBuilder.append(new SubTitle(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.VERSE_LINE)) {
                 stringBuilder.append(new VerseLine(childNode).getElement());
+            } else if (nodeName.equalsIgnoreCase(Element.VERSE_GROUP)) {
+                stringBuilder.append(new VerseGroup(childNode).getElement());
             } else if (Element.OWNERSHIP_ELEMENTS.contains(nodeName)) {
                 stringBuilder.append(new OwnershipElements(childNode).getElement());
             }
