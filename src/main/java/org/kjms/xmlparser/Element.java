@@ -3,8 +3,7 @@ package org.kjms.xmlparser;
 import java.util.Set;
 
 public final class Element {
-    private Element() {
-    }
+    private Element() {}
 
     public static final String ARTICLE = "article";
     public static final String APPENDIX = "app";

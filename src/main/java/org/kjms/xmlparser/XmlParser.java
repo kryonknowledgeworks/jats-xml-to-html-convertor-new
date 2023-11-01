@@ -22,7 +22,7 @@ public class XmlParser {
             myWriter.write(html);
             myWriter.close();
         } catch (IOException e) {
-            System.out.println("Failure");
+            System.out.println("Conversion Failure");
         }
     }
 }
